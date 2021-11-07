@@ -1,4 +1,49 @@
 #main{
   background-color: #EEEEEE;
-  font-family: 'Poppins', sans-serif;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+}
+
+.widgetStyle{
+  border: 1px #2A2A2D;
+  margin: 20px 20px;
+  background-color: white;
+  box-shadow: 0 0 4px -1px #39393F;
+  padding: 20px;
+}
+.widgetStyle p{
+  margin: 0 30px;
+}
+
+.widgetStyle h2{
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.paragraphCenter{
+  text-align: center;
+  font-size: 13px;
+}
+
+.buttonDiv{
+  text-align:center;
+}
+.buttonDiv button{
+  background: #ff1100;
+  border-radius: 5px;
+  border: none;
+  color: #F9F8F8;
+  font-weight: bolder;
+  margin: 10px 0;
+  padding: 13px;
+}
+.buttonDiv button:hover{
+  background-color: #ff6c61;
+}
+
+.paddingSection{
+  padding: 20px;
 }
