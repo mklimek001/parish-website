@@ -1,26 +1,31 @@
+/* Main Styles */
+
 #main{
   background-color: #EEEEEE;
 }
 
 img{
-  height: 100%;
+  object-fit: scale-down;
   width: 100%;
+
 }
 
 .widgetStyle{
   border: 1px #2A2A2D;
-  margin: 20px 20px;
+  margin: 20px;
   background-color: white;
   box-shadow: 0 0 4px -1px #39393F;
-  padding: 20px;
+  padding: 15px 20px;
 }
+
 .widgetStyle p{
-  margin: 0 30px;
+  margin: 5px 30px;
 }
 
 .widgetStyle h2{
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+
 }
 
 .paragraphCenter{
@@ -28,8 +33,16 @@ img{
   font-size: 13px;
 }
 
+.paddingSection{
+  padding: 20px 20px 20px 0;
+}
+
+
+/* Main wiev styles */
+
 .buttonDiv{
   text-align:center;
+  margin-top: 15px;
 }
 .buttonDiv button{
   background: #ff1100;
@@ -44,6 +57,14 @@ img{
   background-color: #ff6c61;
 }
 
-.paddingSection{
-  padding: 20px;
+
+/* Post Section Styles */
+
+.posts{
+background-color: #000;
+padding: 40px;
+}
+
+.newsWidget{
+
 }
