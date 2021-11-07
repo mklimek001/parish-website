@@ -1,3 +1,4 @@
+
 body
 {
 	background-color: #00ccffdc;
@@ -38,3 +39,9 @@ h1
 {
 	margin: 10px;
 }
+
+#main{
+  background-color: #EEEEEE;
+  font-family: 'Poppins', sans-serif;
+}
+
