@@ -37,8 +37,11 @@ img{
   padding: 20px 20px 20px 0;
 }
 
+.container a{
+  text-decoration: none;
+}
 
-/* Main wiev styles */
+/* Main view styles */
 
 .buttonDiv{
   text-align:center;
@@ -58,13 +61,61 @@ img{
 }
 
 
-/* Post Section Styles */
+/* Post Section styles */
 
 .posts{
 background-color: #000;
 padding: 40px;
 }
 
-.newsWidget{
+/* Navigation styles */
 
+#menu{
+  border-bottom: 1px solid darkgray;
 }
+
+.navigation .menu-link{
+border-right: 1px solid darkgray;
+}
+.navigation .first{
+  border-left: 1px solid darkgray;
+}
+.navigation .menu-link p{
+color: black;
+font-size: large;
+text-align: center;
+}
+.navigation .row{
+  margin: 10px 0px 20px 0px;
+}
+.navigation .firstpage{
+  color: red;
+  height :2px;
+  margin-bottom: 0;
+  margin-top: -2px;
+}
+.navigation .secondpage{
+  color: red;
+  height :2px;
+  margin-bottom: 0;
+  margin-top: -2px;
+}
+.navigation .thirdpage{
+  color: red;
+  height :2px;
+  margin-bottom: 0;
+  margin-top: -2px;
+}
+.navigation .fourthpage{
+  color: red;
+  height :2px;
+  margin-bottom: 0;
+  margin-top: -2px;
+}
+.navigation .fifthpage{
+  color: red;
+  height :2px;
+  margin-bottom: 0;
+  margin-top: -2px;
+}
+
