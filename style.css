@@ -214,7 +214,55 @@ text-align: center;
   }
 }
 
+/* Contact page */
+.contact-content{
+  margin-top: 40px;
+}
 
+.jumper
+{
+  padding: 20px;
+  text-align: center;
+  margin: 20px;
+}
 
+.jumper img
+{
+	width: 10%;
+}
 
+.jumper figure
+{
+	margin: 10px;
+}
+
+.contact-heading h1{
+  text-align: center;
+  font-size: 36px;
+	font-weight: 400;
+	padding: 20px;
+}
+
+.contact-fields{
+  font-size: 17px;
+}
+
+#center-contact-field{
+  border-left: 2px solid black; 
+  border-right: 2px solid black;
+}
+
+@media (max-width: 1200px) { 
+  #center-contact-field{
+    border-left: 2px solid black; 
+    border-right: none;
+  }
+}
+
+@media (max-width: 768px) { 
+  #center-contact-field{
+    border-left: none; 
+    border-right: none;
+  }
+}
 

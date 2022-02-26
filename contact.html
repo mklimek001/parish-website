@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parafia Stary Wisnicz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="news-service.js" defer></script>
+
+</head>
+<body onload = loadDetails()>   
+    <div id="menu">
+        <!-- jquery download menu div from menu.html file-->
+    </div>
+    
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div class="contact-heading">
+                    <h1>Kontakt</h1>
+                </div>
+                
+                <div class="row justify-content-center contact-fields">
+    
+                    <div class="jumper col-xl-3 col-md-5 col-sm-12">
+                            <a href="#"><img src="icons/icon1.png"	style="width: 8%;"  ></a>
+                            <br>Lokalizacja
+                            <br><br>Parafia pw. Świętego Wojciecha BM 
+                            <br>w Starym Wiśniczu
+                            <br>Stary Wiśnicz 213
+                            <br>32-720 Nowy Wiśnicz
+                    </div>
+    
+                    <div class="jumper col-xl-4 col-md-5 col-sm-12" id="center-contact-field";>
+                            <a href="#"><img src="icons/icon2.png"></a>
+                            <br>Kontakt
+                            <br><br>Ks. Proboszcz Ryszard Kołodziej:
+                            <br> 14-68-56-233
+                            <br><br>Ks. Konrad Dziedzic: 
+                            <br>571-487-136
+    
+                    </div>
+    
+                    <div class="jumper col-xl-3 col-md-5 col-sm-12">
+                            <a href="#"><img src="icons/icon3.png"></a>
+                            <br>Numer Konta
+                            <br><br>95 8589 0006 0230 0617 4102 0001
+                            <br>Bank Spółdzielczy Rzemiosła 
+                            <br>o. w Nowym Wiśniczu
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <!-- jquery download footer div from footer.html file-->
+    </div>
+
+    <script>
+        $(function(){
+          $("#menu").load("navigation.html");
+          $("#footer").load("footer.html");
+        });
+    </script>
+    
+</body>
+</html>
+
+
