@@ -161,4 +161,185 @@ text-align: center;
   object-fit: cover;
 }
 
+<<<<<<< Updated upstream
+=======
+/* Single info */
+.latest-news-box{
+  background-color:  black;
+  padding-top: 40px;
+}
+
+.content-container{
+  background-color: #F9F8F8;
+  padding: 40px 0px;
+}
+
+.news-box{
+  width: 80%;
+  margin-left: 10%;
+  background-color: white;
+  box-shadow: 0 0 4px -1px #39393F;
+  color: #2A2A2D;
+}
+
+.main-photo{
+  width: 100%;
+  height: 512px;
+  object-fit: cover;
+}
+
+.news-box h2{
+  padding: 20px 10px;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.info-text{
+  padding: 10px 40px 30px 40px;
+  font-size: 18px;
+}
+
+@media (max-width: 992px) { 
+  .main-photo{
+    height: 384px;
+  }
+}
+
+@media (max-width: 768px) { 
+  .news-box{
+    width: 100%;
+    margin: 0px;
+  }
+
+  .main-photo{
+    height: 256px;
+  }
+}
+
+/* Contact page */
+.contact-content{
+  margin-top: 40px;
+}
+
+.jumper
+{
+  padding: 20px;
+  text-align: center;
+  margin: 20px;
+}
+
+.jumper img
+{
+	width: 10%;
+}
+
+.jumper figure
+{
+	margin: 10px;
+}
+
+.contact-heading h1{
+  text-align: center;
+  font-size: 36px;
+	font-weight: 400;
+	padding: 20px;
+}
+
+.contact-fields{
+  font-size: 17px;
+}
+
+#center-contact-field{
+  border-left: 2px solid black; 
+  border-right: 2px solid black;
+}
+
+@media (max-width: 1200px) { 
+  #center-contact-field{
+    border-left: 2px solid black; 
+    border-right: none;
+  }
+}
+
+@media (max-width: 768px) { 
+  #center-contact-field{
+    border-left: none; 
+    border-right: none;
+  }
+}
+
+/* Church subpages */
+.video-container{
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.info-text hr{
+  width: 70%;
+  margin-top: 15px;
+}
+
+.priests-tab{
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+
+.priests-tab td{
+  width: 50%;
+  padding: 5px 10px;
+}
+
+.priest-col{
+  text-align: right;
+}
+
+@media (max-width: 992px) { 
+  .video-container{
+    width: 100%;
+    margin-left: 0;
+  }
+  
+}
+
+/* Parisch office */
+.office-info{
+  text-align: center;
+  font-size: 18px;
+}
+
+.office-info h3{
+  font-size: 24px;
+}
+
+
+.parish-service-widget h2{
+  font-size: 20px;
+  margin: 0px;
+}
+
+.office-heading h1{
+  text-align: center;
+  font-size: 36px;
+	font-weight: 400;
+	padding: 20px;
+}
+
+.info-text h3{
+  font-size: 24px;
+  margin: 24px 10px 12px 10px;
+  margin-left: 10px;
+
+}
+
+.info-text h4{
+  font-size: 22px;
+  margin: 20px 10px 10px 10px;
+  font-weight: 400;
+}
+
+
+>>>>>>> Stashed changes
 
