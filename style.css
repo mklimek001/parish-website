@@ -276,6 +276,7 @@ text-align: center;
   margin-top: 40px;
 }
 
+
 .info-text hr{
   width: 70%;
   margin-top: 15px;
@@ -295,6 +296,7 @@ text-align: center;
 .priest-col{
   text-align: right;
 }
+
 
 @media (max-width: 992px) { 
   .video-container{
@@ -339,7 +341,5 @@ text-align: center;
   margin: 20px 10px 10px 10px;
   font-weight: 400;
 }
-
-
 
 
