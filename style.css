@@ -161,8 +161,7 @@ text-align: center;
   object-fit: cover;
 }
 
-<<<<<<< Updated upstream
-=======
+
 /* Single info */
 .latest-news-box{
   background-color:  black;
@@ -268,6 +267,7 @@ text-align: center;
   }
 }
 
+
 /* Church subpages */
 .video-container{
   width: 70%;
@@ -341,5 +341,5 @@ text-align: center;
 }
 
 
->>>>>>> Stashed changes
+
 
