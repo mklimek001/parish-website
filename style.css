@@ -161,6 +161,7 @@ text-align: center;
   object-fit: cover;
 }
 
+
 /* Single info */
 .latest-news-box{
   background-color:  black;
@@ -265,4 +266,80 @@ text-align: center;
     border-right: none;
   }
 }
+
+
+/* Church subpages */
+.video-container{
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.info-text hr{
+  width: 70%;
+  margin-top: 15px;
+}
+
+.priests-tab{
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+
+.priests-tab td{
+  width: 50%;
+  padding: 5px 10px;
+}
+
+.priest-col{
+  text-align: right;
+}
+
+@media (max-width: 992px) { 
+  .video-container{
+    width: 100%;
+    margin-left: 0;
+  }
+  
+}
+
+/* Parisch office */
+.office-info{
+  text-align: center;
+  font-size: 18px;
+}
+
+.office-info h3{
+  font-size: 24px;
+}
+
+
+.parish-service-widget h2{
+  font-size: 20px;
+  margin: 0px;
+}
+
+.office-heading h1{
+  text-align: center;
+  font-size: 36px;
+	font-weight: 400;
+	padding: 20px;
+}
+
+.info-text h3{
+  font-size: 24px;
+  margin: 24px 10px 12px 10px;
+  margin-left: 10px;
+
+}
+
+.info-text h4{
+  font-size: 22px;
+  margin: 20px 10px 10px 10px;
+  font-weight: 400;
+}
+
+
+
 
