@@ -161,6 +161,7 @@ text-align: center;
   object-fit: cover;
 }
 
+
 /* Single info */
 .latest-news-box{
   background-color:  black;
@@ -266,6 +267,7 @@ text-align: center;
   }
 }
 
+
 /* Church subpages */
 .video-container{
   width: 70%;
@@ -273,6 +275,28 @@ text-align: center;
   text-align: center;
   margin-top: 40px;
 }
+
+
+.info-text hr{
+  width: 70%;
+  margin-top: 15px;
+}
+
+.priests-tab{
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+
+.priests-tab td{
+  width: 50%;
+  padding: 5px 10px;
+}
+
+.priest-col{
+  text-align: right;
+}
+
 
 @media (max-width: 992px) { 
   .video-container{
@@ -317,6 +341,5 @@ text-align: center;
   margin: 20px 10px 10px 10px;
   font-weight: 400;
 }
-
 
 
