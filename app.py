@@ -93,6 +93,7 @@ def login():
 
 
 @app.route("/registration", methods=['GET', 'POST'])
+@login_required
 def registration():
     form = RegisterForm()
 

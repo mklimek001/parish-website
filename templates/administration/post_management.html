@@ -1,22 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Management</title>
-</head>
-<body>
-    <h1>Zarządzanie</h1>
+{% extends 'base.html' %}
 
-    <a href="{{url_for('nowy')}}">Dodaj nowy post</a> <br>
+{% block head %}
+<title>Zarządzanie</title>
+{% endblock %}
 
-    {% for post in posts %}
-    <h3>{{post.title}}</h3>
-    <img src='{{post.main_photo}}' width="400" height="300">
-    <p>{{post.content}}</p>
+{% block body %}
+    <div id="main">
+        <div class="all-news-box">       
+            <div class="container">
+                <div class="row justify-content-center management-bar">
+                    <h1>Zarządzanie</h1>
+                    <a class="col-xl-2 col-md-3 col-sm-10" href="{{url_for('nowy')}}"><div class="management-button">Dodaj nowy post</div></a>
+                    <a class="col-xl-2 col-md-3 col-sm-10" href="{{url_for('registration')}}"><div class="management-button">Rejestracja</div></a>
+                    <a class="col-xl-2 col-md-3 col-sm-10" href="{{url_for('logout')}}"><div class="management-button">Wyloguj się</div></a>
+                </div> 
+                <div class="row justify-content-center" id="posts-row">
+                    {% for post in posts %}
+                        <div class="col-xl-3 col-md-5 col-sm-12 widget-box" >
+                            <div class="widget-inner-container"> 
+                                <h2>{{post.title}}</h2>
+                                <img alt="NewsImage" src="{{post.main_photo}}">
+                                <div class="post-management-button">{% if post.is_public > 0 %} Cofnij publikację {% else %} Opublikuj {% endif %}</div>
+                                <div class="post-management-button">Dodaj galerię</div>
+                                <div class="post-management-button">Edytuj</div>
+                                <div class="post-management-button">Usuń post</div>
+                            </div>
 
-    {% endfor %}
-    <a href="{{url_for('logout')}}">Wyloguj się</a> <br>
-</body>
-</html>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+{% endblock %}

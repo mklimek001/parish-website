@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
-</head>
-<body>
-    <h1>Admin panel</h1>
-    <a href="{{url_for('login')}}">Logowanie</a> <br>
-    <a href="{{url_for('registration')}}">Rejestracja</a>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block head %}
+<title>Admin</title>
+{% endblock %}
+
+{% block body %}
+<div class="main">
+    <div class="container">
+        <div class="row justify-content-center management-bar">
+            <h1>Panel administracyjny</h1>
+            <a class="col-xl-2 col-md-3 col-sm-10" href="{{url_for('login')}}"><div class="management-button">Logowanie</div></a>
+            <a class="col-xl-2 col-md-3 col-sm-10" href="{{url_for('registration')}}"><div class="management-button">Rejestracja</div></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

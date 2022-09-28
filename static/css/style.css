@@ -56,6 +56,7 @@ img{
   text-align:center;
   margin-top: 15px;
 }
+
 .buttonDiv button{
   background: #ff1100;
   border-radius: 5px;
@@ -65,6 +66,7 @@ img{
   margin: 10px 0;
   padding: 13px;
 }
+
 .buttonDiv button:hover{
   background-color: #ff6c61;
 }
@@ -202,6 +204,10 @@ text-align: center;
   width: 100%;
   height: 512px;
   object-fit: cover;
+}
+
+.content-field{
+  white-space: pre-wrap;
 }
 
 .news-box h2{
@@ -377,4 +383,78 @@ text-align: center;
   margin-bottom: 10px;
   font-size: 20px;
   color: #EEEEEE;
+}
+
+
+/* management style */
+.management-bar{
+  margin-bottom: 20px;
+}
+
+.management-bar h1{
+  font-size: 28px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.management-button{
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  background-color: white;
+  margin: 10px;
+  box-shadow: 0 0 4px -1px #39393F;
+}
+
+.management-button:hover{
+  box-shadow: 0 0 10px -2px #39393F;
+  background-color: #39393F;
+  color: white;
+}
+
+.post-management-button{
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  margin: 2px 0;
+}
+
+.post-management-button:hover{
+  background-color: #39393F;
+  color: white;
+}
+
+.management-bar form{
+  text-align: center;
+}
+
+.management-bar input{
+  font-size: 16px;
+  padding: 6px 12px;
+  margin: 10px 0;
+}
+
+.management-bar p{
+  font-size: 16px;
+  text-align: left;
+  margin-left: 16%;
+}
+
+
+#new-post-title,
+#new-post-photo{
+  width: 70%;
+  text-align: center;
+}
+
+#new-post-title{
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#new-post-content{
+  font-size: 16px;
+  width: 80%;
+  padding: 6px 12px;
+  margin: 10px 0;
 }
