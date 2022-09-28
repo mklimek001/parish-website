@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Strona Główna</title>
+{% endblock %}
+
+{% block body %}
+<div id="main">
+    <div class="container top">
+        <div class="row justify-content-around">
+            <div class="col-lg-7">
+                <div class="row justify-content-center paddingSection">
+                    <div class="col-lg-10 widgetStyle">
+                        <h2>Godziny Mszy Świętych</h2>
+                        <h3>Msze Święte w niedzielę</h3>
+                        <p>7:00, 9:00, 11:00</p>
+                        <p>15:00 Nieszpory, 15:30 Msza Święta</p>
+                        <br>
+                        <h3>Msze Święte w czasie Świąt</h3>
+                        <p>7:00, 8:30, 10:00, 11:30</p>
+                        <p>15:00 Nieszpory, 15:30 Msza Święta</p>
+                        <br>
+                        <h3>Msze Święte w dni powszednie</h3>
+                        <p>6:45</p>
+                        <p>17:00 w okresie zimowym</p>
+                        <p>18:00 w okresie letnim</p>
+                        <p>19:00 w czasie wakacji</p>
+                        <br>
+                        <p>Informacje o zmianach godzin Mszy Świętych w zakładce</p>
+                        <a href="{{url_for('news')}}">Aktualności</a>
+                    </div> 
+                    <div class="col-lg-10 widgetStyle">
+                        <h2>Msze święte na żywo</h2>
+                        <div class="buttonDiv">
+                            <a href="https://www.youtube.com/channel/UCIppRoWO0KQl6BBu9EevhRw/featured" target="_blank">
+                                <button class="transmissionButton">
+                                    <h4>Tutaj możesz zobaczyć transmisję</h4>
+                                </button>
+                            </a>
+                        </div>
+                        <p class="paragraphCenter">Transmisja Mszy Świętej z naszego kościoła parafialnego <br> w Niedziele i święta o godzinie 9:00 i 11:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5" >
+                <div class="paddingSection">
+                    <img src="{{ url_for('static', filename='img/church.jpg') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="posts">
+        <div class="container">
+            <div class="row justify-content-around">
+                {% for post in posts %}
+                <div class="col-xl-3 col-md-5 col-sm-12 widget-box" >
+                    <a href="/aktualnosci/{{post.id}}">
+                        <div class="widget-inner-container"> 
+                            <h2>{{post.title}}</h2>
+                            <img alt="NewsImage" src="{{post.main_photo}}">
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Strona Główna</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div class="contact-heading">
+                    <h1>Kontakt</h1>
+                </div>
+                
+                <div class="row justify-content-center contact-fields">
+    
+                    <div class="jumper col-xl-3 col-md-5 col-sm-12">
+                            <a href="#"><img src="{{ url_for('static', filename='icons/icon1.png') }}"></a>
+                            <br>Lokalizacja
+                            <br><br>Parafia pw. Świętego Wojciecha BM 
+                            <br>w Starym Wiśniczu
+                            <br>Stary Wiśnicz 213
+                            <br>32-720 Nowy Wiśnicz
+                    </div>
+    
+                    <div class="jumper col-xl-4 col-md-5 col-sm-12" id="center-contact-field";>
+                            <a href="#"><img src="{{ url_for('static', filename='icons/icon2.png') }}"></a>
+                            <br>Kontakt
+                            <br><br>Ks. Proboszcz Ryszard Kołodziej:
+                            <br> 14-68-56-233
+                            <br><br>Ks. Konrad Dziedzic: 
+                            <br>571-487-136
+    
+                    </div>
+    
+                    <div class="jumper col-xl-3 col-md-5 col-sm-12">
+                            <a href="#"><img src="{{ url_for('static', filename='icons/icon2.png') }}"></a>
+                            <br>Numer Konta
+                            <br><br>95 8589 0006 0230 0617 4102 0001
+                            <br>Bank Spółdzielczy Rzemiosła 
+                            <br>o. w Nowym Wiśniczu
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {% endblock %}
+</body>
+</html>
+
+

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Strona Główna</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="all-news-box">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('lso')}}">
+                            <div class="widget-inner-container">
+                                <h2>Liturgiczna Służba Ołtarza</h2>
+                                <img src="{{ url_for('static', filename='img/group-photos/lso-photo.png') }}" alt="GroupImage">
+                            </div>
+                        </a>
+                    </div>
+                
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('dsm')}}">
+                            <div class="widget-inner-container">
+                                <h2>Dziewczęca Służba Maryjna</h2>
+                                <img src="{{ url_for('static', filename='img/group-photos/dsm-photo.png') }}" alt="GroupImage">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('ga')}}">
+                            <div class="widget-inner-container">
+                                <h2>Grupa Apostolska</h2>
+                                <img src="{{ url_for('static', filename='img/group-photos/ga-photo.png') }}" alt="GroupImage">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('caritas')}}">
+                            <div class="widget-inner-container">
+                                <h2>Caritas</h2>
+                                <img src="{{ url_for('static', filename='img/group-photos/caritas-photo.png') }}" alt="GroupImage">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

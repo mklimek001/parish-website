@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Strona Główna</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div class="office-heading">
+                    <h1>Kancelaria Parafialna</h1>
+                </div>
+                
+                <div class="info-text office-info">
+                    <h3>Kancelaria Parafialna jest czynna:</h3>
+                    <p id="content-field">
+                            Od poniedziałku do soboty
+                            <br>7.30-8.00 i pół godziny po wieczornej Mszy Świętej
+                            <br><br>* sprawy przedmałżeńskie: piątek po Mszy Świętej wieczornej
+                            <br>** w nagłych wypadkach o każdej porze                   
+                    </p>
+                    <h3>Posługi:</h3>
+                </div>
+
+                    <div class="container">
+        
+                        <div class="row justify-content-center">
+                            <div class="col-md-5 col-sm-12 widget-box parish-service-widget">
+                                <a href="{{url_for('baptism')}}">
+                                    <div class="widget-inner-container">
+                                        <h2>Chrzest</h2>
+                                        <img src="{{ url_for('static', filename='img/office-photos/baptism.png') }}" alt="ServiceImage">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-5 col-sm-12 widget-box parish-service-widget">
+                                <a href="{{url_for('marriage')}}">
+                                    <div class="widget-inner-container">
+                                        <h2>Małżeństwo</h2>
+                                        <img src="{{ url_for('static', filename='img/office-photos/marriage.png') }}" alt="ServiceImage">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-5 col-sm-12 widget-box parish-service-widget">
+                                <a href="{{url_for('confirmation')}}">
+                                    <div class="widget-inner-container">
+                                        <h2>Bierzmowanie</h2>
+                                        <img src="{{ url_for('static', filename='img/office-photos/confirmation.png') }}" alt="ServiceImage">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-5 col-sm-12 widget-box parish-service-widget">
+                                <a href="{{url_for('communion')}}">
+                                    <div class="widget-inner-container">
+                                        <h2>Pierwsza Komunia Święta</h2>
+                                        <img src="{{ url_for('static', filename='img/office-photos/communion.png') }}" alt="ServiceImage">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-5 col-sm-12 widget-box parish-service-widget">
+                                <a href="{{url_for('confession')}}">
+                                    <div class="widget-inner-container">
+                                        <h2>Spowiedź Święta</h2>
+                                        <img src="{{ url_for('static', filename='img/office-photos/confession.png') }}" alt="ServiceImage">
+                                    </div>
+                                </a>
+                            </div>
+
+
+                            <div class="col-md-5 col-sm-12 widget-box parish-service-widget">
+                                <a href="{{url_for('illness')}}">
+                                    <div class="widget-inner-container">
+                                        <h2>Namaszczenie Chorych</h2>
+                                        <img src="{{ url_for('static', filename='img/office-photos/illness.png') }}" alt="ServiceImage">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-5 col-sm-12 widget-box parish-service-widget">
+                                <a href="{{url_for('funeral')}}">
+                                    <div class="widget-inner-container">
+                                        <h2>Pogrzeb Katolicki</h2>
+                                        <img src="{{ url_for('static', filename='img/office-photos/funeral.png') }}" alt="ServiceImage">
+                                    </div>
+                                </a>
+                            </div>
+
+
+                            
+                        </div>
+        
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+
