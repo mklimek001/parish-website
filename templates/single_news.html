@@ -23,8 +23,8 @@
                 <div class="row justify-content-around">
                     {% for post in posts %}
                     <div class="col-xl-3 col-md-5 col-sm-12 widget-box" >
-                        <a href="/aktualnosci/{{post.id}}">
-                            <div class="widget-inner-container"> 
+                        <a href="/aktualnosci/{{post.id}}" class="non-decorated-link">
+                            <div class="widget-inner-container inner-container-on-black"> 
                                 <h2>{{post.title}}</h2>
                                 <img alt="NewsImage" src="{{post.main_photo}}">
                             </div>

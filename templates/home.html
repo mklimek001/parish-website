@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-<div id="main">
+<div class="main">
     <div class="container top">
         <div class="row justify-content-around">
             <div class="col-lg-7">
@@ -27,7 +27,7 @@
                         <p>19:00 w czasie wakacji</p>
                         <br>
                         <p>Informacje o zmianach godzin Mszy Świętych w zakładce</p>
-                        <a href="{{url_for('news')}}">Aktualności</a>
+                        <a href="{{url_for('news')}}" class="non-decorated-link homepage-news-link">Aktualności</a>
                     </div> 
                     <div class="col-lg-10 widgetStyle">
                         <h2>Msze święte na żywo</h2>
@@ -55,8 +55,8 @@
             <div class="row justify-content-around">
                 {% for post in posts %}
                 <div class="col-xl-3 col-md-5 col-sm-12 widget-box" >
-                    <a href="/aktualnosci/{{post.id}}">
-                        <div class="widget-inner-container"> 
+                    <a href="/aktualnosci/{{post.id}}" class="non-decorated-link">
+                        <div class="widget-inner-container inner-container-on-black"> 
                             <h2>{{post.title}}</h2>
                             <img alt="NewsImage" src="{{post.main_photo}}">
                         </div>

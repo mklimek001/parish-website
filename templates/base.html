@@ -17,34 +17,29 @@
 </head>
 
 <body>
-    <div id="menu">
-        <div class="col-lg-3">
-            <a href="{{url_for('home')}}">
-                <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="">
-            </a>
-        </div>
-        <div class="container navigation">
-            <div class="row justify-content-end">
-                <div class="col-lg-9 d-flex align-items-center">
-                    
-                    <div class="col-lg-2 menu-link first">
-                        <a href="{{url_for('church')}}"><p>Świątynia</p></a><hr class="firstpage">
-                    </div>
-                    <div class="col-lg-2 menu-link">
-                        <a href="{{url_for('news')}}"><p>Aktualności</p></a><hr class="secondpage">
-                    </div>
-                    <div class="col-lg-2 menu-link">
-                        <a href="{{url_for('groups')}}"><p>Wspólnoty</p></a><hr class="thirdpage">
-                    </div>
-                    <div class="col-lg-2 menu-link">
-                        <a href="{{url_for('office')}}"><p>Kancelaria</p></a><hr class="fourthpage">
-                    </div>
-                    <div class="col-lg-2 menu-link">
-                        <a href="{{url_for('contact')}}"><p>Kontakt</p></a><hr class="fifthpage">
-                    </div>
-                </div>
+    <div class="navigation-bar">
+        <input type="checkbox" id="navbox">
+        
+        <a class="menu-logo" href="{{url_for('home')}}"> 
+            <p>Parafia Stary Wiśnicz</p> 
+        </a> 
+        
+        <label for="navbox" class="navlabel">
+            <div class="clickyelem"> 
+                <div class="burger-button-part" id="firstline"></div>
+                <div class="burger-button-part" id="secondline"></div>
+                <div class="burger-button-part" id="thirdline"></div>
             </div>
-        </div>
+
+        </label>  
+        
+        <ul class="menu">
+            <li class="listelem"><a href="{{url_for('church')}}" class="menu-link non-decorated-link">Świątynia</a></li>
+            <li class="listelem"><a href="{{url_for('news')}}" class="menu-link non-decorated-link">Aktualności</a></li>
+            <li class="listelem"><a href="{{url_for('groups')}}" class="menu-link non-decorated-link">Wspólnoty</a></li>
+            <li class="listelem"><a href="{{url_for('office')}}" class="menu-link non-decorated-link">Kancelaria</a></li>
+            <li class="listelem"><a href="{{url_for('contact')}}" class="menu-link non-decorated-link">Kontakt</a></li>
+        </ul>
     </div>
 
     {% block body %}{% endblock %}
