@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>{{post.title}}</title>
+<title>Dodawanie zdjęć</title>
 {% endblock %}
 
 {% block body %}    
@@ -11,37 +11,31 @@
                 <div id="photo-field">
                     <img class="main-photo" src="{{post.main_photo}}" alt="NewsImage"></img>
                 </div>
-                <h2 class="info-title" id="title-field"> {{post.title}} </h2>
+                <h2 class="info-title" id="title-field"> {{post.title}} - dodawanie zdjęć </h2>
                 <div class="info-text" >
                     <p class="content-field">{{post.content}}</p>
                 </div>
 
+                <form class="photo-add-form" action="/dodawanie-zdjec/{{post.id}}" method="POST">
+                    <p>Link do zdjęcia:</p>
+                    <input type="text" name="new-photo-link" id="new-photo-link" class="photo-input" maxlength="200" required> <br>
+                    <p>Opis do zdjęcia:</p>
+                    <input type="text" name="new-photo-desc" id="new-photo-desc" class="photo-input" maxlength="200" required> <br>
+                    <input type="submit" id="photo-add-button" value="Dodaj">
+                </form>
+                
                 {% for photo in photos %}
                 <div class = "gallery-photo-box">
                     <img class="gallery-photo" src="{{photo.photo_addres}}" alt="NewsImage"></img>
                     <div class="gallery-photo-desc">{{photo.description}}</div>
                 </div>
                 {% endfor %}
+
                 
+
             </div>
         </div>
 
-        <div class="latest-news-box">
-            <div class="container">
-                <div class="row justify-content-around">
-                    {% for post in posts %}
-                    <div class="col-xl-3 col-md-5 col-sm-12 widget-box" >
-                        <a href="/aktualnosci/{{post.id}}" class="non-decorated-link">
-                            <div class="widget-inner-container inner-container-on-black"> 
-                                <h2>{{post.title}}</h2>
-                                <img alt="NewsImage" src="{{post.main_photo}}">
-                            </div>
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
     </div>
 
     {% endblock %}

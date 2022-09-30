@@ -1,3 +1,4 @@
+from tkinter import PhotoImage
 from flask import Flask, redirect, render_template, url_for, request
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
@@ -145,6 +146,28 @@ def nowy():
         return render_template("administration/new_post.html")
 
 
+@app.route("/dodawanie-zdjec/<int:news_id>", methods=['POST', 'GET'])
+@login_required
+def gallery_adding(news_id):
+    if request.method == 'POST':
+        gallery_photo = request.form['new-photo-link']
+        gallery_photo_desc = request.form['new-photo-desc']
+
+        new_photo = GalleryPhoto(photo_addres = gallery_photo, description = gallery_photo_desc, post_id = news_id)
+
+        try:
+            db.session.add(new_photo)
+            db.session.commit()
+            return redirect(request.url)
+        except:
+            return 'An error has occured!'
+
+    else:
+        photos = GalleryPhoto.query.filter(GalleryPhoto.post_id == news_id).all()
+        current_post = Post.query.filter_by(id = news_id).first()
+        return render_template("administration/gallery_adding.html", post = current_post, photos = photos)
+
+
 # main pages for average users
 
 @app.route("/")
@@ -177,7 +200,8 @@ def contact():
 def single_news(id):
     post = Post.query.filter_by(id = id).first()
     three_posts = Post.query.filter(Post.is_public >= '1').filter(Post.id != id).order_by(desc(Post.date)).limit(3).all()
-    return render_template("single_news.html", post = post, posts = three_posts)
+    photos = GalleryPhoto.query.filter(GalleryPhoto.post_id == id).all()
+    return render_template("single_news.html", post = post, posts = three_posts, photos = photos)
 
 
 # church subpages

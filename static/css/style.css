@@ -525,16 +525,18 @@ padding: 40px;
   color: white;
 }
 
-.post-management-button{
+.management-link{
   font-size: 16px;
-  padding: 10px;
   text-align: center;
   margin: 2px 0;
+  width: 100%;
+  display: block;
+  padding: 6px 0 6px 0;
 }
 
-.post-management-button:hover{
+.management-link:hover{
+  color: #EEEEEE;
   background-color: #39393F;
-  color: white;
 }
 
 .management-bar form{
@@ -553,7 +555,6 @@ padding: 40px;
   margin-left: 16%;
 }
 
-
 #new-post-title,
 #new-post-photo{
   width: 70%;
@@ -570,4 +571,48 @@ padding: 40px;
   width: 80%;
   padding: 6px 12px;
   margin: 10px 0;
+}
+
+
+
+/* Gallery in news */
+.gallery-photo-box{
+  width: 80%;
+  margin: 0 10% 0 10%;
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.gallery-photo{
+  width: 100%;
+  max-width: 1000px;
+}
+
+.gallery-photo-desc{
+  font-size: 16px;
+  text-align: center;
+  padding: 2px 5% 0 5%;
+}
+
+/* Gallery management */
+.photo-add-form{
+  font-size: 16px;
+}
+
+.photo-add-form p{
+  margin: 16px 0 6px 16%;
+}
+
+.photo-input{
+  width: 70%;
+  margin-left: 15%;
+  padding: 6px;
+}
+
+#photo-add-button{
+  padding: 5px;
+  width: 100px;
+  margin-left: calc(50% - 50px);
+  margin-top: 16px;
+  margin-bottom: 24px;
 }
