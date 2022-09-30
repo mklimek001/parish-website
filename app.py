@@ -1,4 +1,5 @@
 from tkinter import PhotoImage
+from turtle import pos
 from flask import Flask, redirect, render_template, url_for, request
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
@@ -167,6 +168,69 @@ def gallery_adding(news_id):
         current_post = Post.query.filter_by(id = news_id).first()
         return render_template("administration/gallery_adding.html", post = current_post, photos = photos)
 
+
+@app.route('/delete-post/<int:id>')
+def delete_post(id):
+    photos_to_delete = GalleryPhoto.query.filter(GalleryPhoto.post_id == id).all()
+    post_to_delete = Post.query.get_or_404(id)
+    try:
+        for photo in photos_to_delete:
+             db.session.delete(photo)
+        db.session.commit()
+
+        db.session.delete(post_to_delete)
+        db.session.commit()
+        return redirect(url_for('management'))
+    except:
+        return 'An error has occured!'
+
+
+@app.route('/update-post/<int:id>', methods=['GET', 'POST'])
+def update_post(id):
+    post = Post.query.get_or_404(id)
+
+    if request.method == 'POST':
+        post.title = request.form['title']
+        post.main_photo = request.form['photo']
+        post.content = request.form['content']
+
+        try:
+            db.session.commit()
+            return redirect(url_for('management'))
+        except:
+            return 'An error has occured!'
+
+    else:
+        return render_template("administration/update_post.html", post = post)
+
+
+@app.route('/publication-post/<int:id>')
+def update(id):
+    post = Post.query.get_or_404(id)
+    if post.is_public == 0:
+        post.is_public = 1
+    else:
+        post.is_public = 0
+
+    try:
+        db.session.commit()
+        return redirect(url_for('management'))
+    except:
+        return 'An error has occured!'
+
+
+@app.route('/delete-photo/<int:id>')
+def delete_photo(id):
+    photo_to_delete = GalleryPhoto.query.get_or_404(id)
+    current_post = Post.query.get_or_404(photo_to_delete.post_id)
+    try: 
+        db.session.delete(photo_to_delete)
+        db.session.commit()
+
+        photos = GalleryPhoto.query.filter(GalleryPhoto.post_id == current_post.id).all()
+        return render_template("administration/gallery_adding.html", post = current_post, photos = photos)
+    except:
+        return 'An error has occured!'
 
 # main pages for average users
 

@@ -27,6 +27,7 @@
                 {% for photo in photos %}
                 <div class = "gallery-photo-box">
                     <img class="gallery-photo" src="{{photo.photo_addres}}" alt="NewsImage"></img>
+                    <a href="/delete-photo/{{photo.id}}"  class="non-decorated-link management-link">Usuń zdjęcie</a>
                     <div class="gallery-photo-desc">{{photo.description}}</div>
                 </div>
                 {% endfor %}

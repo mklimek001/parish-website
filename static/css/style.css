@@ -532,6 +532,7 @@ padding: 40px;
   width: 100%;
   display: block;
   padding: 6px 0 6px 0;
+  text-decoration: none;
 }
 
 .management-link:hover{

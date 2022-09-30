@@ -20,10 +20,10 @@
                             <div class="widget-inner-container"> 
                                 <h2>{{post.title}}</h2>
                                 <img alt="NewsImage" src="{{post.main_photo}}">
-                                <a href="#"  class="non-decorated-link management-link">{% if post.is_public > 0 %} Cofnij publikację {% else %} Opublikuj {% endif %}</a>
-                                <a href="/dodawanie-zdjec/{{post.id}}"  class="non-decorated-link management-link">Dodaj galerię</a>
-                                <a href="#"  class="non-decorated-link management-link">Edytuj</a>
-                                <a href="#"  class="non-decorated-link management-link">Usuń post</a>
+                                <a href="/publication-post/{{post.id}}"  class="non-decorated-link management-link">{% if post.is_public > 0 %} Cofnij publikację {% else %} Opublikuj {% endif %}</a>
+                                <a href="/dodawanie-zdjec/{{post.id}}"  class="non-decorated-link management-link">Zarządzaj galerią</a>
+                                <a href="/update-post/{{post.id}}"  class="non-decorated-link management-link">Edytuj</a>
+                                <a href="/delete-post/{{post.id}}"  class="non-decorated-link management-link">Usuń post</a>
                             </div>
 
                         </div>
