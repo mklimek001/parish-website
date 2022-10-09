@@ -16,7 +16,6 @@ app = Flask(__name__)
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
-app.config['SECRET_KEY'] = "parafiasw"
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -170,6 +169,7 @@ def gallery_adding(news_id):
 
 
 @app.route('/delete-post/<int:id>')
+@login_required
 def delete_post(id):
     photos_to_delete = GalleryPhoto.query.filter(GalleryPhoto.post_id == id).all()
     post_to_delete = Post.query.get_or_404(id)
@@ -186,6 +186,7 @@ def delete_post(id):
 
 
 @app.route('/update-post/<int:id>', methods=['GET', 'POST'])
+@login_required
 def update_post(id):
     post = Post.query.get_or_404(id)
 
@@ -205,6 +206,7 @@ def update_post(id):
 
 
 @app.route('/publication-post/<int:id>')
+@login_required
 def update(id):
     post = Post.query.get_or_404(id)
     if post.is_public == 0:
@@ -220,6 +222,7 @@ def update(id):
 
 
 @app.route('/delete-photo/<int:id>')
+@login_required
 def delete_photo(id):
     photo_to_delete = GalleryPhoto.query.get_or_404(id)
     current_post = Post.query.get_or_404(photo_to_delete.post_id)
@@ -231,6 +234,7 @@ def delete_photo(id):
         return render_template("administration/gallery_adding.html", post = current_post, photos = photos)
     except:
         return 'An error has occured!'
+
 
 # main pages for average users
 
@@ -293,6 +297,11 @@ def saints():
 @app.route("/swiatynia/ruchoma-szopka")
 def xmas():
     return render_template("church-subpages/xmas.html")
+
+@app.route("/swiatynia/kapliczki-przydrozne")
+def chapels():
+    return render_template("church-subpages/chapels.html")
+
 
 # groups subpages
 

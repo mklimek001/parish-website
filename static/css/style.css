@@ -2,6 +2,7 @@
 
 .main, #main{
   background-color: #F9F8F8;
+  padding-top: 20px;
 }
 
 img{
@@ -104,7 +105,7 @@ padding: 40px;
 
 #navbox{
   display: none;
-  margin: 0;
+  margin: 0 !important;
 }
 
 .menu-logo{
@@ -116,6 +117,11 @@ padding: 40px;
   width: 80%;
   text-decoration: none;
   color: #282828;
+  font-weight: 400;
+}
+
+.menu-logo p{
+  margin: 0;
 }
 
 .menu-logo:hover{
@@ -158,7 +164,7 @@ padding: 40px;
   width: 34px;
   height: 4px;
   border-radius: 1px;
-  background-color:black;
+  background-color: #282828;
   left: 8px;
   border-radius: 3px;
   transition: 0.5s;
@@ -220,6 +226,17 @@ padding: 40px;
 #navbox:checked~ul.menu li{
   display: flex;
 }
+
+.navlabel{
+  margin: 0;
+}
+
+.navigation-bar-underline{
+  color: #282828;
+  margin: 6px 6px 0 6px;  
+}
+
+
 
 @media (min-width: 992px) { 
   .listelem{

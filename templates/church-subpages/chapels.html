@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Kapliczki przydrożne</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div id="photo-field">
+                    <img class="main-photo" src="{{ url_for('static', filename='img/church.jpg') }}" alt="GroupImage"></img>
+                </div>
+                <h2 class="info-title" id="title-field">Kapliczki przydrożne</h2>
+                <div class="info-text row justify-content-center" >
+                    <p id="content-field">
+                        Na terenie naszej parafii znajduje się wiele starych przydrożnych kapliczek, o które troszczą się mieszkańcy.
+                    </p>
+
+                    <h3>Dzwon</h3>
+                    <div class="content-photo col-xl-5 col-sm-12">
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/dzwon_2.jpg') }}"></img>                            
+                    </div>
+                        <div class="text-to-photo col-xl-7 col-sm-12">
+                        <p>
+                            Dzwon, pochodzący z roku 1545, został ufundowany przez Piotra II Kmitę. Herb i inicjały fundatora oraz jego dwóch kolejnych żon (Anny Górki i Barbary Herburtówny) można odnaleźć na dzwonie. Dzwon ten jest jednym z czterech ufundowanych przez Piotra Kmitę i umieszczonych pierwotnie w kościele. Zabytek, ze względu na pęknięcia, spoczywa obok kościoła na specjalnie przygotowanym cokole. Obecnie na wieży kościoła znajdują się dwa inne dzwony, odlane w 1924 roku.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

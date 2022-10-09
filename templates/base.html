@@ -13,6 +13,7 @@
     
     {% block head %}{% endblock %}
 
+    <link rel="icon" href="{{ url_for('static', filename='icons/main_icon.png') }}">
     <title>Parafia Stary Wisnicz</title>
 </head>
 
@@ -22,17 +23,8 @@
         
         <a class="menu-logo" href="{{url_for('home')}}"> 
             <p>Parafia Stary Wiśnicz</p> 
-        </a> 
-        
-        <label for="navbox" class="navlabel">
-            <div class="clickyelem"> 
-                <div class="burger-button-part" id="firstline"></div>
-                <div class="burger-button-part" id="secondline"></div>
-                <div class="burger-button-part" id="thirdline"></div>
-            </div>
+        </a>      
 
-        </label>  
-        
         <ul class="menu">
             <li class="listelem"><a href="{{url_for('church')}}" class="menu-link non-decorated-link">Świątynia</a></li>
             <li class="listelem"><a href="{{url_for('news')}}" class="menu-link non-decorated-link">Aktualności</a></li>
@@ -40,6 +32,16 @@
             <li class="listelem"><a href="{{url_for('office')}}" class="menu-link non-decorated-link">Kancelaria</a></li>
             <li class="listelem"><a href="{{url_for('contact')}}" class="menu-link non-decorated-link">Kontakt</a></li>
         </ul>
+
+        <hr class="navigation-bar-underline">
+
+        <label for="navbox" class="navlabel">
+            <div class="clickyelem"> 
+                <div class="burger-button-part" id="firstline"></div>
+                <div class="burger-button-part" id="secondline"></div>
+                <div class="burger-button-part" id="thirdline"></div>
+            </div>
+        </label>  
     </div>
 
     {% block body %}{% endblock %}
