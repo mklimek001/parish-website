@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Rada Parafialna</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div id="photo-field">
+                    <img class="main-photo" src="{{ url_for('static', filename='img/group-photos/ga-photo.png') }}" alt="GroupImage"></img>
+                </div>
+                <h2 class="info-title" id="title-field">Rada Parafialna</h2>
+                <div class="info-text" >
+                    <p id="content-field">
+                        Duszpasterska Rada Parafialna to grupa osób, duchownych i świeckich, której zadaniem jest służenie radą i pomocą ks. Proboszczowi w kierowaniu parafią. To szczególne zaangażowanie w życie parafii wynika z prawdziwej i głębokiej troski o dobro całej wspólnoty parafialnej, zarówno w wymiarze widzialnym jak i duchowym. Radzie Parafialnej przewodniczy ks. Proboszcz, a jej skład tworzą parafianie mianowani z urzędu (przez ks. Proboszcza) oraz wybrani przez wiernych parafii w wyborach.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+

@@ -17,6 +17,7 @@ bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
@@ -320,6 +321,10 @@ def ga():
 @app.route("/wspolnoty/caritas")
 def caritas():
     return render_template("groups-subpages/caritas.html")
+
+@app.route("/wspolnoty/rada-parafialna")
+def council():
+    return render_template("groups-subpages/council.html")
 
 
 #office subpages
