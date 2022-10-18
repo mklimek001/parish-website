@@ -13,20 +13,22 @@
     
     {% block head %}{% endblock %}
 
-    <link rel="icon" href="{{ url_for('static', filename='icons/main_icon.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/main-logo-circle.png') }}">
     <title>Parafia Stary Wisnicz</title>
+    <!-- Icons on page by https://icons8.com -->
 </head>
 
 <body>
     <div class="navigation-bar">
         <input type="checkbox" id="navbox">
         
-        <a class="menu-logo" href="{{url_for('home')}}"> 
+        <a class="menu-logo" href="{{url_for('home')}}">
+            <img src="{{ url_for('static', filename='icons/main-logo.png')}}" alt="Logo" class = "parish-logo-img">
             <p>Parafia Stary Wiśnicz</p> 
         </a>      
 
         <ul class="menu">
-            <li class="listelem"><a href="{{url_for('church')}}" class="menu-link non-decorated-link">Świątynia</a></li>
+            <li class="listelem"><a href="{{url_for('church')}}" class="menu-link non-decorated-link">O Parafii</a></li>
             <li class="listelem"><a href="{{url_for('news')}}" class="menu-link non-decorated-link">Aktualności</a></li>
             <li class="listelem"><a href="{{url_for('groups')}}" class="menu-link non-decorated-link">Wspólnoty</a></li>
             <li class="listelem"><a href="{{url_for('office')}}" class="menu-link non-decorated-link">Kancelaria</a></li>
@@ -48,15 +50,17 @@
     {% block body %}{% endblock %}
 
     <div id="footer">
-        <div class="links">
+        <div class="footer-links">
             <h3>Przydatne linki</h3>
             <a href="https://www.facebook.com/Grupa-Apostolska-Stary-Wi%C5%9Bnicz-282549075699900/" target="_blank"><p>Grupa Apostolska na Facebook'u</p></a>
             <a href="https://www.youtube.com/channel/UCIppRoWO0KQl6BBu9EevhRw?app=desktop" target="_blank"><p>Parafialny kanał YouTube</p></a>
             <a href="https://diecezja.tarnow.pl/" target="_blank"><p>Diecezja Tarnowska</p></a>
+            <a href="https://www.wsd.tarnow.pl/" target="_blank"><p>Wyższe Seminarium Duchowne w Tarnowie</p></a>
             <a href="https://rdn.pl/" target="_blank"><p>Radio RDN Małopolska</p></a>
             <a href="https://tarnow.gosc.pl/" target="_blank"><p>Gość Tarnowski</p></a>
         </div>
     </div>
+
 </body>
 
 </html>

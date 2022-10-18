@@ -1,5 +1,10 @@
 /* Main Styles */
 
+body{
+  background-color: #000 !important;
+  min-height: 100vh;
+}
+
 .main, #main{
   background-color: #F9F8F8;
   padding-top: 20px;
@@ -73,6 +78,7 @@ img{
 .buttonDiv button:hover{
   background-color: #282828;
   box-shadow: 0 0 10px -2px #39393F;
+  transition: 0.5s;
 }
 
 .homepage-news-link:hover{
@@ -82,6 +88,7 @@ img{
 .non-decorated-link:hover{
   text-decoration: none;
   font-weight: 700;
+  transition: 0.1s;
 }
 
 .non-decorated-link{
@@ -120,7 +127,13 @@ padding: 40px;
   font-weight: 400;
 }
 
+.parish-logo-img{
+  height: 56px;
+  width: 56px;
+}
+
 .menu-logo p{
+  padding: 6px 0 0 6px;
   margin: 0;
 }
 
@@ -145,19 +158,16 @@ padding: 40px;
   display: none;
   width: 100%;
   font-size: 18px;
+  padding-top: 6px;
 }
 
-.listelem:hover{
-  background-color: #F9F8F8;
-  transition: 0.5s;
-}
 
 .clickyelem{
   width: 50px;
   height: 50px;
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 14px;
+  top: 14px;
 }
 
 .burger-button-part{
@@ -188,7 +198,7 @@ padding: 40px;
 }
 
 #navbox:checked~ * #secondline{
-  display: none;
+  width: 0;
   background-color: #F9F8F8;
   transition: 0.5s;
 }
@@ -232,9 +242,10 @@ padding: 40px;
 }
 
 .navigation-bar-underline{
-  color: #282828;
-  margin: 6px 6px 0 6px;  
-}
+  margin: 6px 0 0 0;  
+  height: 6px !important;
+  background: linear-gradient(#282828, #d1d1d1, #F9F8F8);
+} 
 
 
 
@@ -249,15 +260,15 @@ padding: 40px;
   }
 
   .menu{
-      width: 70%;
+      width: 63%;
       flex-direction: row;
       position: absolute;
       top: 0;
-      left: 30%;
+      left: 37%;
   }
   
   .menu-logo{
-    width: 30%;
+    width: 37%;
   }
 }
 
@@ -285,6 +296,7 @@ padding: 40px;
 .widget-inner-container:hover{
   color: black;
   box-shadow: 0 0 10px -2px #39393F;
+  transition: 0.2s;
 }
 
 .inner-container-on-black{
@@ -293,6 +305,7 @@ padding: 40px;
 
 .inner-container-on-black:hover{
   box-shadow: 0 0 16px -3px white;
+  transition: 0.2s;
 }
 
 .widget-inner-container h2{
@@ -325,7 +338,8 @@ padding: 40px;
 
 .news-box{
   width: 80%;
-  margin-left: 10%;
+  max-width: 1152px;
+  margin-left: max(10%, calc(50% - 576px));
   background-color: white;
   box-shadow: 0 0 4px -1px #39393F;
   color: #2A2A2D;
@@ -363,7 +377,9 @@ padding: 40px;
     width: 100%;
     margin: 0px;
   }
+}
 
+@media (max-width: 576px) { 
   .main-photo{
     height: 256px;
   }
@@ -374,21 +390,16 @@ padding: 40px;
   margin-top: 40px;
 }
 
-.jumper
+.single-contact-field
 {
-  padding: 20px;
+  padding: 40px;
   text-align: center;
-  margin: 20px;
 }
 
-.jumper img
+.single-contact-field img
 {
 	width: 10%;
-}
-
-.jumper figure
-{
-	margin: 10px;
+  margin-bottom: 2%;
 }
 
 .contact-heading h1{
@@ -399,13 +410,27 @@ padding: 40px;
 }
 
 .contact-fields{
+  padding: 20px 10px;
   font-size: 17px;
 }
+
+.contact-fields hr{
+  display: none;
+}
+
 
 #center-contact-field{
   border-left: 2px solid black; 
   border-right: 2px solid black;
 }
+
+@media (max-width: 1600px) { 
+  .single-contact-field img
+  {
+    width: 14%;
+  }
+}
+
 
 @media (max-width: 1200px) { 
   #center-contact-field{
@@ -414,11 +439,26 @@ padding: 40px;
   }
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 992px) { 
   #center-contact-field{
-    border-left: none; 
+    border-left: none ; 
     border-right: none;
   }
+
+  .single-contact-field img
+  {
+    width: 10%;
+  }
+
+  .contact-fields hr{
+    display: block;
+    height: 2px !important;
+    color: black;
+    width: 310px;
+    opacity: 100%;
+    margin: 10px 0;
+  }
+  
 }
 
 
@@ -459,6 +499,30 @@ padding: 40px;
   }
   
 }
+
+.content-photo{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side-photo{
+  margin-bottom: 6px;
+}
+
+.smaller-side-photo-left,
+.smaller-side-photo-right{
+  width: calc(50% - 3px);
+  margin-bottom: 6px;
+}
+
+.smaller-side-photo-left{
+  margin-right: 3px;
+}
+
+.smaller-side-photo-right{
+  margin-left: 3px;
+}
+
 
 /* Parisch office */
 .office-info{
@@ -514,6 +578,10 @@ padding: 40px;
   margin-bottom: 10px;
   font-size: 20px;
   color: #EEEEEE;
+}
+
+.footer-links{
+  padding: 20px 0;
 }
 
 /* management style */
@@ -633,4 +701,35 @@ padding: 40px;
   margin-left: calc(50% - 50px);
   margin-top: 16px;
   margin-bottom: 24px;
+}
+
+/* error template */
+.error-container{
+  width: 100%;
+  padding: 256px 30px;
+  text-align: center;
+}
+
+.error-container img{
+  width: 100px;
+}
+
+.error-container h1{
+  margin-bottom: 16px;
+}
+
+.error-container a{
+  text-decoration: underline;
+  color: #2A2A2D;
+  transition: 0.5s;
+}
+
+.error-container a:hover{
+  color: #2A2A2D;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.error-sign{
+  font-size: 64px;
 }

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Strona Główna</title>
+
 {% endblock %}
 
 {% block body %}
@@ -34,7 +34,7 @@
                         <div class="buttonDiv">
                             <a href="https://www.youtube.com/channel/UCIppRoWO0KQl6BBu9EevhRw/featured" target="_blank">
                                 <button class="transmissionButton">
-                                    <h4>Tutaj możesz zobaczyć transmisję</h4>
+                                    <h4>Tutaj możesz znaleźć transmisję</h4>
                                 </button>
                             </a>
                         </div>
@@ -52,13 +52,13 @@
 
     <div class="posts">
         <div class="container">
-            <div class="row justify-content-around">
+            <div class="row justify-content-center">
                 {% for post in posts %}
                 <div class="col-xl-3 col-md-5 col-sm-12 widget-box" >
                     <a href="/aktualnosci/{{post.id}}" class="non-decorated-link">
                         <div class="widget-inner-container inner-container-on-black"> 
-                            <h2>{{post.title}}</h2>
                             <img alt="NewsImage" src="{{post.main_photo}}">
+                            <h2>{{post.title}}</h2>
                         </div>
                     </a>
                 </div>

@@ -18,8 +18,8 @@
                     {% for post in posts %}
                         <div class="col-xl-3 col-md-5 col-sm-12 widget-box" >
                             <div class="widget-inner-container"> 
-                                <h2>{{post.title}}</h2>
                                 <img alt="NewsImage" src="{{post.main_photo}}">
+                                <h2>{{post.title}}</h2>
                                 <a href="/publication-post/{{post.id}}"  class="non-decorated-link management-link">{% if post.is_public > 0 %} Cofnij publikację {% else %} Opublikuj {% endif %}</a>
                                 <a href="/dodawanie-zdjec/{{post.id}}"  class="non-decorated-link management-link">Zarządzaj galerią</a>
                                 <a href="/update-post/{{post.id}}"  class="non-decorated-link management-link">Edytuj</a>

@@ -1,7 +1,5 @@
-from tkinter import PhotoImage
-from turtle import pos
-from flask import Flask, redirect, render_template, url_for, request
-from datetime import datetime
+from flask import Flask, redirect, render_template, url_for, request, abort
+from datetime import datetime, timedelta
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from sqlalchemy import ForeignKey, desc
@@ -18,6 +16,7 @@ db = SQLAlchemy(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 
 
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
@@ -27,6 +26,7 @@ login_manager.login_view = 'login'
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+MAX_POST_AGE_IN_DAYS = 14
 
 # database models
 
@@ -241,10 +241,11 @@ def delete_photo(id):
 
 @app.route("/")
 def home():
-    three_posts = Post.query.filter(Post.is_public >= '1').order_by(desc(Post.date)).limit(3).all()
+    filter_month = datetime.today() - timedelta(days = MAX_POST_AGE_IN_DAYS)
+    three_posts = Post.query.filter(Post.is_public >= '1').filter(Post.date >= filter_month).order_by(desc(Post.date)).limit(3).all()
     return render_template("home.html", posts = three_posts)
 
-@app.route("/swiatynia")
+@app.route("/o-parafii")
 def church():
     return render_template("church.html")
 
@@ -267,39 +268,44 @@ def contact():
 
 @app.route("/aktualnosci/<int:id>")
 def single_news(id):
-    post = Post.query.filter_by(id = id).first()
-    three_posts = Post.query.filter(Post.is_public >= '1').filter(Post.id != id).order_by(desc(Post.date)).limit(3).all()
+    post = Post.query.get_or_404(id)
+    if post.is_public < 1:
+        abort(404)
+
+    filter_month = datetime.today() - timedelta(days = MAX_POST_AGE_IN_DAYS)
+    three_posts = Post.query.filter(Post.is_public >= '1').filter(Post.id != id).filter(Post.date >= filter_month).order_by(desc(Post.date)).limit(3).all()
     photos = GalleryPhoto.query.filter(GalleryPhoto.post_id == id).all()
     return render_template("single_news.html", post = post, posts = three_posts, photos = photos)
 
 
 # church subpages
 
-@app.route("/swiatynia/historia-parafii")
+@app.route("/o-parafii/historia-parafii")
 def history():
     return render_template("church-subpages/history.html")
 
-@app.route("/swiatynia/architektura")
+@app.route("/o-parafii/architektura")
 def architecture():
     return render_template("church-subpages/architecture.html")
 
-@app.route("/swiatynia/zabytki")
+@app.route("/o-parafii/zabytki")
 def monuments():
     return render_template("church-subpages/monuments.html")
 
-@app.route("/swiatynia/proboszczowie")
+@app.route("/o-parafii/proboszczowie")
 def priests():
     return render_template("church-subpages/priests.html")
 
-@app.route("/swiatynia/zywoty-swiatych")
+@app.route("/o-parafii/zywoty-swiatych")
 def saints():
     return render_template("church-subpages/saints.html")
 
-@app.route("/swiatynia/ruchoma-szopka")
+@app.route("/o-parafii/ruchoma-szopka")
 def xmas():
     return render_template("church-subpages/xmas.html")
 
-@app.route("/swiatynia/kapliczki-przydrozne")
+
+@app.route("/o-parafii/kapliczki-przydrozne")
 def chapels():
     return render_template("church-subpages/chapels.html")
 
@@ -336,13 +342,17 @@ def baptism():
 def marriage():
     return render_template("office-subpages/marriage.html")
 
+
 @app.route("/kancelaria/bierzmowanie")
 def confirmation():
     return render_template("office-subpages/confirmation.html")
 
+
 @app.route("/kancelaria/pierwsza-komunia")
 def communion():
     return render_template("office-subpages/communion.html")
+
+
 
 @app.route("/kancelaria/spowiedz")
 def confession():
@@ -355,6 +365,11 @@ def illness():
 @app.route("/kancelaria/pogrzeb")
 def funeral():
     return render_template("office-subpages/funeral.html")
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error/404.html'), 404
 
 
 if __name__ == "__main__":
