@@ -1,8 +1,12 @@
 /* Main Styles */
 
 body{
-  background-color: #000 !important;
+  background-color: #F9F8F8 !important;
+}
+
+.backgroud-filler{
   min-height: 100vh;
+  background-color: #000;
 }
 
 .main, #main{
@@ -51,6 +55,16 @@ img{
   padding: 20px 20px 20px 20px;
 }
 
+@media (max-width: 992px) {
+  .paddingSection{
+    padding-bottom: 0;
+  }
+
+  .img-section{
+    padding: 0 20px 40px 20px;
+  } 
+}
+
 .container a{
   text-decoration: none;
 }
@@ -93,6 +107,12 @@ img{
 
 .non-decorated-link{
   color: #2A2A2D;
+}
+
+.home-photo{
+  box-shadow: 0 0 4px -1px #39393F;
+  object-fit: cover;
+  max-height: 710px;
 }
 
 
@@ -269,6 +289,28 @@ padding: 40px;
   
   .menu-logo{
     width: 37%;
+  }
+}
+
+
+@media (max-width:480px){
+  .header-long{
+    display: none;
+  }
+
+  .header-short{
+    font-size: 27px;
+  }
+
+  .menu-logo p {
+    padding: 7.5px 0 0 5px;
+    margin: 0;
+}
+}
+
+@media (min-width:480px){
+  .header-short{
+    display: none;
   }
 }
 
@@ -459,6 +501,12 @@ padding: 40px;
     margin: 10px 0;
   }
   
+}
+
+.icons-source{
+  color: #282828;
+  text-align: right;
+  padding-right: 6px;
 }
 
 
@@ -732,4 +780,10 @@ padding: 40px;
 
 .error-sign{
   font-size: 64px;
+}
+
+.facebook-embeded{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 16px;
 }
