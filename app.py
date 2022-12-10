@@ -13,9 +13,9 @@ from flask_bcrypt import Bcrypt
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 app.config['SECRET_KEY'] = ""
-
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
+
 
 
 login_manager = LoginManager()
@@ -76,12 +76,12 @@ class LoginForm(FlaskForm):
 
 # administration pages
 
-@app.route("/admin")
+@app.route("/a1d5m2i0n")
 def admin():
     return render_template("administration/admin.html")
 
 
-@app.route("/login", methods=['GET', 'POST'])
+@app.route("/l1o5g2i0n", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
 
