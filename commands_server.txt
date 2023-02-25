@@ -1,0 +1,24 @@
+Bunch of commands to run in order to set all application properties.
+Like MAKEFILE struct, but it is not MAKEFILE!
+To run it's necceseray additional file passenger_wsgi.py
+https://pomoc.small.pl/Flask/
+
+
+installation:
+	pip install flask
+	pip3 install -U "bcrypt<4.0.0"
+	pip install flask_bcrypt
+	pip install flask_sqlalchemy flask_login flask_wtf wtforms email_validator
+
+database_build:
+	python
+	> from app import db, app
+	> app.app_context().push()
+    	> db.create_all()
+    	> exit()
+
+check_database:
+	sqlite3
+	> .tables
+	> .exit
+

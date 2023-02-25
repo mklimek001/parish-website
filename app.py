@@ -76,12 +76,12 @@ class LoginForm(FlaskForm):
 
 # administration pages
 
-@app.route("/a1d5m2i0n")
+@app.route("/admin")
 def admin():
     return render_template("administration/admin.html")
 
 
-@app.route("/l1o5g2i0n", methods=['GET', 'POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
 
