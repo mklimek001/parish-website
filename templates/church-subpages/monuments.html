@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Parafialne zabytki</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div id="photo-field">
+                    <img class="main-photo" src="{{ url_for('static', filename='img/church-photos/title-photos/zabytki.jpg') }}" alt="GroupImage"></img>
+                </div>
+                <h2 class="info-title" id="title-field">Parafialne zabytki</h2>
+                <div class="info-text row justify-content-center" >
+
+                    <h3>Tabernakulum</h3>
+                    <div class="content-photo col-xl-5 col-sm-12">
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/tabernakulum.jpg') }}"></img>                            
+                    </div>
+                        <div class="text-to-photo col-xl-7 col-sm-12">
+                        <p>
+                            Renesansowe tabernakulum mieści się z boku głównego ołtarza, na ścianie północnej, około 2 metrów nad posadzką kościoła. Jest to tabernakulum przyścienne, rzeźbione w piaskowcu, pochodzące z czasów fundatora świątyni i tabernakulum zarazem - Piotra Kmity III. Tabernakulum stanowi przyścienny jakby pomnik typu wiszącego wsparty na dwóch konsolach. Od frontu nałożono na siebie w kolejności trzy elementy architektury klasycznej. Największy ma kształt stojącego prostokąta flankowanego pilastrami o kapitelach na wzór głowic korynckich. Na pilastrach spoczywa pełne belkowanie z architrawem, fryzem i gzymsem. Na fryzie biegnie napis " Ecce Panis Angelorum MDXXXXIIII " - "Oto chleb aniołów 1544". Belkowanie wieńczy dekoracja wpisana w wycinek łuku. Na dekorację składa się uskrzydlona główka anioła wraz z motywem roślinnym. Pomiędzy pilastrami umieszczono drugi element - fronton greckiej świątyni, w której z kolei mamy następne dwa pilastry, tym razem z głowicami jońskimi. W polu trójkątnego przyczółka frontonu znajduje się tarcza herbowa z literami "PK". Trzecim elementem architektury jest obramowanie drzwiczek tabernakulum, które flankują z obu stron szerokie węgary, na nich poprzeczną wstęgą przebiega fryz, a na fryzie spoczywa półkoliste zwieńczenie. Zwieńczenie owo daje wrażenie głębokiego sklepienia świątyni pokrytego kasetonami. Półkolistą przestrzeń nad drzwiczkami wypełnia podobizna Ducha świętego - gołębica, natomiast pozostałe narożne pola zdobią znów uskrzydlone anielskie główki. Drzwiczki do tabernakulum są metalowe, kute w żelazie z rozetkowymi nakładkami o charakterze ukośnej kratki. Tabernakulum zostało wykonane prawdopodobnie przez jednego z włoskich rzeźbiarzy pracujących w tym czasie na Wawelu, jednak autor nie jest znany z imienia.
+                        </p>
+                    </div>
+                    <hr>
+
+                    <h3>Chrzcielnica</h3>
+                    <div class="content-photo col-xl-5 col-sm-12">
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/chrzcielnica.jpg') }}"></img>                            
+                    </div>
+                        <div class="text-to-photo col-xl-7 col-sm-12">
+                        <p>
+                            Rzeźba kamienna pochodząca z XVII wieku, przeznaczona początkowo do kaplicy południowej, została jednak przeniesiona do nawy głównej, tuż obok wejścia do kaplicy, po lewej stronie. W czasie kolejnych prac przeniesiono chrzcielnicę w prawy róg, obok ołtarza głównego. Chrzcielnica została wykonana na wzór kielicha wspartego na trzonie złożonym z dwóch kwadratowych kostek z wstawionym pomiędzy nie wrzecionowatym fragmentem kolumny. Chrzcielnica posiada kanelowaną czaszę. Całość kompozycji stoi na podstawie przypominającej kształtem okrągły kamień młyński. Nakrycie czaszy wykonane zostało dopiero w 1985 roku. Składają się na nie cztery rzeźbione w drewnie i złocone palmety zbiegające się koncentrycznie szczytami, a miejsce spotkania szczytów zwieńczone jest kulą z krzyżem. Całość stanowi przykład typowej wiejskiej chrzcielnicy z tego czasu.
+                        </p>
+                    </div>
+                    <hr>
+
+                    <h3>Epitafia</h3>
+                    <div class="content-photo col-xl-5 col-sm-12">                      
+                        <img class="smaller-side-photo-left" src="{{ url_for('static', filename='img/church-photos/monuments-photos/epitafia2.jpg') }}"></img>                            
+                        <img class="smaller-side-photo-right" src="{{ url_for('static', filename='img/church-photos/monuments-photos/epitafia3.jpg') }}"></img>                                               
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/epitafia.jpg') }}"></img>      
+                    </div>
+                        <div class="text-to-photo col-xl-7 col-sm-12">
+                        <p>
+                            Dwa najstarsze epitafia znajdują się na środku nawy głównej, po stronie północnej i południowej i zostały poświęcone zmarłym proboszczom parafii piastującym swój urząd w XIX wieku: ks. Sebastianowi Szafrańskiemu (zmarły w 1836 roku) oraz ks. Wincentemu Świetlińskiemu (zmarły w 1870 roku). Są to prostokątne tablice kamienne. Epitafium poświęcone ks. Szafrańskiemu zakończone jest u góry krzyżem, ustawionym na półkolistej podstawie z kielichem i hostią u stóp. Epitafium poświęcone ks. Świetlińskiemu ma dekoracyjne wcięcia we wszystkich bokach i zdobiło grób kapłana na starym cmentarzu w Wiśniczu. Z cmentarza przeniesiono tablicę w 1984 roku do kościoła.
+                            <br><br>Kolejne dwa, nowsze epitafia znajdują się w przedsionku kościoła i również poświęcone są proboszczom parafii - ks. Antoniemu Gawędzie i ks. Stanisławowi Jakubasowi
+                        </p>
+                    </div>
+                    <hr>
+
+                    <h3>Ambona</h3>
+                    <div class="content-photo col-xl-5 col-sm-12">
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/ambona.jpg') }}"></img>                            
+                    </div>
+                        <div class="text-to-photo col-xl-7 col-sm-12">
+                        <p>
+                            Ambona o renesansowym charakterze znajduje się przy ścianie północnej w połowie nawy, obok kaplicy. Na ambonę zbudowaną z kosza i baldachimu prowadzi wejście z zakrystii. Ośmioboczny kosz zakończony jest odwróconą ośmioboczną kopułą. Również baldachim ambony stanowi ośmioboczna kopuła ustawiona w normalnej pozycji, zwieńczona spłaszczoną kulą z krzyżem.
+                        </p>
+                    </div>
+                    <hr>
+
+                    <h3>Stacje drogi krzyżowej</h3>
+                    <div class="content-photo col-xl-5 col-sm-12">
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/stacje1.jpg') }}"></img>
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/stacje2.jpg') }}"></img>                                                        
+                    </div>
+                        <div class="text-to-photo col-xl-7 col-sm-12">
+                        <p>
+                            Stacje drogi krzyżowej przedstawiające sceny z męki Chrystusa zostały namalowane olejno na płótnie. Poszczególne sceny zostały wzbogacone o barwne tło przedstawiające architekturę, pejzaż jerozolimskiej ulicy czy Kalwarii. Wszystkie stacje drogi krzyżowej oprawione są w identyczne pseudogotyckie oprawy o charakterze architektonicznym (elementy takie jak: kolumienki, pinakle, gzymsy) pochodzące prawdopodobnie z początku XIX wieku. Autorem obrazów jest Lugi Morgari, prawdopodobnie Włoch. Data powstania obrazów nie jest znana.
+                        </p>
+                    </div>
+                    <hr>
+
+                    <h3>Prospekt organowy</h3>
+                    <div class="content-photo col-xl-5 col-sm-12">
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/organy.jpg') }}"></img>                            
+                    </div>
+                        <div class="text-to-photo col-xl-7 col-sm-12">
+                        <p>
+                            Zewnętrzna oprawa organów (prospekt) o charakterze renesansowym przypomina od frontu cztero skrzydłową szafę lub kredens. W poszczególnych lach rozmieszczone są pionowo cynowe piszczałki. Instrument jest dziesięciogłosowy i został zakupiony do parafii w roku 1883.
+                        </p>
+                    </div>
+                    <hr>
+
+                    <h3>Empora chóru muzycznego</h3>
+                    <div class="content-photo col-xl-5 col-sm-12">
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/chor.jpg') }}"></img>                            
+                    </div>
+                        <div class="text-to-photo col-xl-7 col-sm-12">
+                        <p>
+                            Empora chóru muzycznego składa się z drewnianej balustrady opartej na sześciu kamiennych konsolach i przebiega przez całą szerokość nawy. Empora tworzy pięć segmentów, z których dwa skrajne są szerokie, a trzy środkowe zwężają się w szybkim tempie, tworząc dekoracyjną podstawę dla prospektu organowego. Empora powstała prawdopodobnie w latach siedemdziesiątych i osiemdziesiątych XIX wieku.
+                        </p>
+                    </div>
+                    <hr>
+
+                    <h3>Konfesjonał</h3>
+                    <div class="content-photo col-xl-5 col-sm-12">
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/konfesjonal.jpg') }}"></img>                            
+                    </div>
+                        <div class="text-to-photo col-xl-7 col-sm-12">
+                        <p>
+                            Neogotycki konfesjonał pochodzi prawdopodobnie z końca wieku XIX. Elewację frontową stanowi arkada zakończona łukiem w kształcie oślego grzbietu, a w jej zakończeniu i po bokach znajdują się szpiczaste pinakle. Daszek szafy konfesjonałowej nakrywa zaznaczona w drewnie dachówka. Konfesjonał zdobią dodatkowo ażurowe skrzydła boczne oraz ażurowe drzwiczki zasłaniające spowiednika.
+                        </p>
+                    </div>
+                    <hr>
+
+                    <h3>Dzwon</h3>
+                    <div class="content-photo col-xl-5 col-sm-12">
+                        <img class="side-photo" src="{{ url_for('static', filename='img/church-photos/monuments-photos/dzwon.jpg') }}"></img>                            
+                    </div>
+                        <div class="text-to-photo col-xl-7 col-sm-12">
+                        <p>
+                            Dzwon, pochodzący z roku 1545, został ufundowany przez Piotra II Kmitę. Herb i inicjały fundatora oraz jego dwóch kolejnych żon (Anny Górki i Barbary Herburtówny) można odnaleźć na dzwonie. Dzwon ten jest jednym z czterech ufundowanych przez Piotra Kmitę i umieszczonych pierwotnie w kościele. Zabytek, ze względu na pęknięcia, spoczywa obok kościoła na specjalnie przygotowanym cokole. Obecnie na wieży kościoła znajdują się dwa inne dzwony, odlane w 1924 roku.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

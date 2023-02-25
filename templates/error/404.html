@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>404</title>
+{% endblock %}
+
+{% block body %}
+<div class="main error-container">
+    <img src="{{ url_for('static', filename='icons/404-icon.png') }}">
+    <p class="icons-source" style="text-align: center;">Icon by icons8.com</p>
+    <h1 class="error-sign">Error 404</h1>
+    <h1>Trafiłeś na stronę, która nie istnieje</h1>
+    <a href="{{url_for('home')}}"><h1>Kliknij aby przejść do strony głównej</h1></a>
+</div>
+{% endblock %}

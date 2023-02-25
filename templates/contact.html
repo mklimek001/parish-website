@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Kontakt</title>
+{% endblock %}
+
+{% block body %}
+
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div class="contact-heading">
+                    <h1>Kontakt</h1>
+                </div>
+                
+                <div class="row justify-content-center contact-fields">
+    
+                    <div class="single-contact-field col-xl-4 col-lg-5 col-md-12">
+                            <a href="https://goo.gl/maps/Jj7qZ1JJgGB5oSsx6" target="_blank"><img src="{{ url_for('static', filename='icons/location-icon.png') }}"></a>
+                            <br>Lokalizacja
+                            <br><br>Parafia pw. Świętego Wojciecha BM 
+                            <br>w Starym Wiśniczu
+                            <br>Stary Wiśnicz 213
+                            <br>32-720 Nowy Wiśnicz
+                    </div>
+
+                    <hr>
+
+                    <div class="single-contact-field col-xl-4 col-lg-5 col-md-12" id="center-contact-field";>
+                            <img src="{{ url_for('static', filename='icons/phone-icon.png') }}">
+                            <br>Kontakt
+                            <br><br>Ks. Proboszcz Ryszard Kołodziej:
+                            <br> 14-68-56-233
+                            <br><br>Ks. Konrad Dziedzic: 
+                            <br>571-487-136
+    
+                    </div>
+
+                    <hr>
+    
+                    <div class="single-contact-field col-xl-4 col-lg-5 col-md-12">
+                            <img src="{{ url_for('static', filename='icons/bank-icon.png') }}">
+                            <br>Numer Konta
+                            <br><br>95 8589 0006 0230 0617 4102 0001
+                            <br>Bank Spółdzielczy Rzemiosła 
+                            <br>o. w Nowym Wiśniczu
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <p class="icons-source">Icons by icons8.com</p>
+    </div>
+    
+    
+
+    {% endblock %}
+   
+

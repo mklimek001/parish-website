@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Historia Parafii</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div id="photo-field">
+                    <img class="main-photo" src="{{ url_for('static', filename='img/church-photos/title-photos/historia-parafii.jpg') }}" alt="GroupImage"></img>
+                </div>
+                <h2 class="info-title" id="title-field">Historia Parafii</h2>
+                <div class="info-text" >
+                    <p id="content-field">
+                        Historia Starego Wiśnicza swoimi korzeniami sięga XIII wieku. W 1238 roku Klemens Gryf, kasztelan krakowski, nadał wioskę klasztorowi Benedyktynek w Staniątkach. Parafia w Starym Wiśniczu powstała zapewne w drugiej połowie XIII wieku, ale pierwsza wzmianka źródłowa pochodzi z 1326 w postaci wykazu podatku, tzw. świętopietrza, uiszczanego na rzecz Stolicy Apostolskiej. Pierwszym panem, właścicielem Wiśnicza i okolicznych wsi był Jan Kmita, który około roku 1360 ufundował tutaj świątynię. Był to kościół pod wezwaniem Św. Katarzyny, zapewne drewniany. 
+                        <br><br>Wieś w następnych dziesięcioleciach była w posiadaniu właścicieli z rodu Kmitów. W końcu panem wsi został Piotr Kmita (1477 - 1553), marszałek wielki koronny i wojewoda krakowski, jeden z najbogatszych i najbardziej wpływowych ludzi ówczesnej Polski. Ufundował on obecny kościół, którego budowę rozpoczęto w 1520 roku, zapewne na miejscu lub w pobliżu starej świątyni drewnianej. Nowy murowany kościół pod wezwaniem Św. Wojciecha i Św. Katarzyny konsekrowano 30 września 1545 roku. Patronat tych świętych jest przypisywany najstarszym kościołom polskim, do których niewątpliwie zaliczyć należy parafię w Starym Wiśniczu. Według legendy Św. Wojciech miał się zatrzymać w Starym Wiśniczu w czasie wyprawy z Pragi do krajów pruskich z misją chrystianizacyjną. 
+                        <br><br>W 1539 roku probostwo w Starym Wiśniczu zostało wyniesione do godności prepozytury. Przyłączono wówczas do parafii Brzeźnicę i Łapczycę, a w 1546 roku także parafię Chronów. Przy kościele w Starym Wiśniczu w XVI wieku prowadziła swoją działalność szkoła parafialna, a ubodzy i schorowani mogli znaleźć schronienie w szpitalu, który istniał tutaj w XVII wieku. 
+                        <br><br>Niegdyś rozległa parafia starowiśnicka została dzisiaj ograniczona do miejscowości Wiśnicz Mały i Stary Wiśnicz i liczy około 2 tysięcy wiernych. Proboszczem parafii pod wezwaniem Św. Wojciecha jest od 2003 roku ksiądz Ryszard Kołodziej.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+

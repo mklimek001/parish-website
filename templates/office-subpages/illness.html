@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Namaszczenie chorych</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div id="photo-field">
+                    <img class="main-photo" src="{{ url_for('static', filename='img/office-photos/illness.jpg') }}" alt="ServiceImage"></img>
+                </div>
+                <h2 class="info-title" id="title-field">Namaszczenie chorych</h2>
+                <div class="info-text" >
+                    <p id="content-field">
+                        „Choruje ktoś wśród Was? Niech sprowadzi kapłanów Kościoła, by się nad nim modlili i namaścili go olejem w imię Pana” Jk 5,14 
+                        <br><br> Tego sakramentu udzielamy w czasie nabożeństwa dla chorych w trakcie rekolekcji parafialnych, oraz podczas wizyty kapłana w domu chorego w pierwsze piątki miesiąca. Do chorych będących w niebezpieczeństwie śmierci udajemy się o każdej porze. 
+                        <br><br> Na przyjście kapłana prosimy przygotować: biały obrus, krzyż, wodę święconą i świece. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+    

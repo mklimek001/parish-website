@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Zarządzanie</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="all-news-box">       
+            <div class="container">
+                <div class="row justify-content-center management-bar">
+                    <h1>Zarządzanie</h1>
+                    <a class="col-xl-3 col-md-4 col-sm-10 non-decorated-link management-button" href="{{url_for('nowy')}}">Nowy post</a>
+                    <a class="col-xl-3 col-md-4 col-sm-10 non-decorated-link management-button" href="{{url_for('registration')}}">Nowy użytkowik</a>
+                    <a class="col-xl-3 col-md-4 col-sm-10 non-decorated-link management-button" href="{{url_for('logout')}}">Wyloguj się</a>
+                </div> 
+                <div class="row justify-content-center" id="posts-row">
+                    {% for post in posts %}
+                        <div class="col-xl-3 col-md-5 col-sm-12 widget-box" >
+                            <div class="widget-inner-container"> 
+                                <img alt="NewsImage" src="{{post.main_photo}}">
+                                <h2>{{post.title}}</h2>
+                                <a href="/publication-post/{{post.id}}"  class="non-decorated-link management-link">{% if post.is_public > 0 %} Cofnij publikację {% else %} Opublikuj {% endif %}</a>
+                                <a href="/dodawanie-zdjec/{{post.id}}"  class="non-decorated-link management-link">Zarządzaj galerią</a>
+                                <a href="/update-post/{{post.id}}"  class="non-decorated-link management-link">Edytuj</a>
+                                <a href="/delete-post/{{post.id}}"  class="non-decorated-link management-link">Usuń post</a>
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+{% endblock %}

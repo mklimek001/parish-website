@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Aktualności</title>
+{% endblock %}
+
+{% block body %} 
+    <div id="main">
+        <div class="all-news-box">
+            <div class="container">
+                <div class="row justify-content-center" id="posts-row">
+                    {% for post in posts %}
+                        <div class="col-xl-3 col-md-5 col-sm-12 widget-box" >
+                            <a href="/aktualnosci/{{post.id}}" class="non-decorated-link">
+                                <div class="widget-inner-container"> 
+                                    <img alt="NewsImage" src="{{post.main_photo}}">
+                                    <h2>{{post.title}}</h2>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+{% endblock %}
+
+</body>
+</html>
+
+

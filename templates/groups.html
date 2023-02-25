@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Grupy parafialne</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="all-news-box">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('lso')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/group-photos/lso-photo-lite.png') }}" alt="GroupImage"/>
+                                <h2>Liturgiczna Służba Ołtarza</h2>
+                            </div>
+                        </a>
+                    </div>
+                
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('dsm')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/group-photos/dsm-photo-lite.png') }}" alt="GroupImage"/>
+                                <h2>Dziewczęca Służba Maryjna</h2>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('ga')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/group-photos/ga-photo-lite.png') }}" alt="GroupImage"/>
+                                <h2>Grupa Apostolska</h2>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('council')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/group-photos/rada-photo-lite.png') }}" alt="GroupImage"/>
+                                <h2>Rada Parafialna</h2>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('caritas')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/group-photos/caritas-photo-lite.png') }}" alt="GroupImage"/>
+                                <h2>Caritas</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

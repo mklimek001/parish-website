@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Pogrzeb katolicki</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div id="photo-field">
+                    <img class="main-photo" src="{{ url_for('static', filename='img/office-photos/funeral.jpg') }}" alt="ServiceImage"></img>
+                </div>
+                <h2 class="info-title" id="title-field">Pogrzeb katolicki</h2>
+                <div class="info-text" >
+                    <p id="content-field">
+                        Udział w pogrzebie jest wyrazem wiary w życie wieczne i miłości do zmarłego. Zgłaszając pogrzeb do kancelarii parafialnej należy przynieść ze sobą akt zgonu zmarłego z Urzędu Stanu Cywilnego oraz dokument przeznaczony dla administracji cmentarza.                     </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+    
+

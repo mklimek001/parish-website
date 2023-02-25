@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Dodawanie zdjęć</title>
+{% endblock %}
+
+{% block body %}    
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div id="photo-field">
+                    <img class="main-photo" src="{{post.main_photo}}" alt="NewsImage"></img>
+                </div>
+                <h2 class="info-title" id="title-field"> {{post.title}} - dodawanie zdjęć </h2>
+                <div class="info-text" >
+                    <p class="content-field">{{post.content}}</p>
+                </div>
+
+                <form class="photo-add-form" action="/dodawanie-zdjec/{{post.id}}" method="POST">
+                    <p>Link do zdjęcia:</p>
+                    <input type="text" name="new-photo-link" id="new-photo-link" class="photo-input" maxlength="200" required> <br>
+                    <p>Opis do zdjęcia:</p>
+                    <input type="text" name="new-photo-desc" id="new-photo-desc" class="photo-input" maxlength="200" required> <br>
+                    <input type="submit" id="photo-add-button" value="Dodaj">
+                </form>
+                
+                {% for photo in photos %}
+                <div class = "gallery-photo-box">
+                    <img class="gallery-photo" src="{{photo.photo_addres}}" alt="NewsImage"></img>
+                    <a href="/delete-photo/{{photo.id}}"  class="non-decorated-link management-link">Usuń zdjęcie</a>
+                    <div class="gallery-photo-desc">{{photo.description}}</div>
+                </div>
+                {% endfor %}
+
+                
+
+            </div>
+        </div>
+
+    </div>
+
+    {% endblock %}
+    
+</body>
+</html>
+
+

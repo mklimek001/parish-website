@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{post.title}}</title>
+{% endblock %}
+
+{% block body %}    
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div id="photo-field">
+                    <img class="main-photo" src="{{post.main_photo}}" alt="NewsImage"></img>
+                </div>
+                <h2 class="info-title" id="title-field"> {{post.title}} </h2>
+                <div class="info-text" >
+                    <p class="content-field">{{post.content}}</p>
+                </div>
+
+                {% for photo in photos %}
+                <div class = "gallery-photo-box">
+                    <img class="gallery-photo" src="{{photo.photo_addres}}" alt="NewsImage"></img>
+                    <div class="gallery-photo-desc">{{photo.description}}</div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+
+        <div class="latest-news-box">
+            <div class="container">
+                <div class="row justify-content-center">
+                    {% for post in posts %}
+                    <div class="col-xl-3 col-md-5 col-sm-12 widget-box" >
+                        <a href="/aktualnosci/{{post.id}}" class="non-decorated-link">
+                            <div class="widget-inner-container inner-container-on-black"> 
+                                <img alt="NewsImage" src="{{post.main_photo}}">
+                                <h2>{{post.title}}</h2>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+    
+</body>
+</html>
+
+

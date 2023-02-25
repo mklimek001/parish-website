@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Caritas</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div id="photo-field">
+                    <img class="main-photo" src="{{ url_for('static', filename='img/group-photos/caritas-photo.png') }}" alt="GroupImage"></img>
+                </div>
+                <h2 class="info-title" id="title-field">Caritas Parafialny</h2>
+                <div class="info-text" >
+                    <p id="content-field">
+                        Parafialny Oddział Caritas – to przede wszystkim przez niego Caritas dociera do potrzebujących i świadczy im swoją pomoc.
+                        <br><br>Praca członków Parafialnego Oddziału Caritas jest wspierana przez innych wiernych, którzy poświęcają się służbie na rzecz osób znajdujących się w jakiejkolwiek trudnej sytuacji, z której nie potrafią wyjść o własnych siłach. 
+                        <br><br>Zadaniem Parafialnego Oddziału jest:
+                
+                        <ol>
+                        <li> Mobilizowanie całej wspólnoty parafialnej do praktykowania miłosierdzia i dążenie do tego, aby parafia stawała się wspólnotą eucharystyczno-charytatywną przez zachęcanie wiernych do pełnienia uczynków miłosierdzia.</li>
+                        <li>stałe rozpoznawanie potrzeb i możliwości pomocy;</li>
+                        <li>przeprowadzanie zbiórek i przyjmowanie ofiar na działalność charytatywną;</li>
+                        <li>organizowanie i świadczenie konkretnej pomocy duchowej i materialnej osobom potrzebującym na terenie parafii. </li>
+                        </ol>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+

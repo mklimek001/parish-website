@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Nowy wpis</title>
+{% endblock %}
+
+{% block body %}
+    <div class="main">
+        <div class="container">
+            <div class="management-bar">
+                <h1>Nowy wpis</h1>
+                <form action="/nowy" method="POST">
+                    <p>Tytuł:</p>
+                    <input type="text" name="title" id="new-post-title" maxlength="100" required> <br>
+                    <p>Zdjęcie główne:</p>
+                    <input type="text" name="photo" id="new-post-photo" maxlength="200" required> <br>
+                    <p>Treść:</p>
+                    <textarea name="content" id="new-post-content" rows="16" maxlength="3000" required ></textarea> <br>
+                    <input type="submit" value="Zapisz">
+                </form>
+            </div>
+        </div>
+    </div>     
+
+{% endblock %}

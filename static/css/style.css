@@ -1,0 +1,806 @@
+/* Main Styles */
+
+body{
+  background-color: #F9F8F8 !important;
+}
+
+.backgroud-filler{
+  min-height: 100vh;
+  background-color: #000;
+}
+
+.main, #main{
+  background-color: #F9F8F8;
+  padding-top: 20px;
+}
+
+img{
+  object-fit: scale-down;
+  width: 100%;
+}
+
+.widgetStyle{
+  border: 1px #2A2A2D;
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0 0 4px -1px #39393F;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.widgetStyle p{
+  font-size: 14px;
+}
+
+.widgetStyle a{
+  font-size: 18px;
+  color: #000;
+  font-weight: 600;
+}
+
+
+.widgetStyle h2{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+
+}
+
+.paragraphCenter{
+  text-align: center;
+  font-size: 14px;
+}
+
+.paddingSection{
+  padding: 20px 20px 20px 20px;
+}
+
+.img-section{
+  padding: 20px 0 0 0;
+} 
+
+@media (max-width: 992px) {
+  .paddingSection{
+    padding-bottom: 0;
+  }
+
+  .img-section{
+    padding: 0 20px 40px 20px;
+  } 
+}
+
+.container a{
+  text-decoration: none;
+}
+
+
+/* Main view styles */
+
+.buttonDiv{
+  text-align:center;
+  margin-top: 15px;
+}
+
+.buttonDiv button{
+  background: #ff0000;
+  border-radius: 8px;
+  font-size: 20px;
+  border: none;
+  color: #F9F8F8;
+  font-weight: 600;
+  padding: 16px 16px 12px 16px;
+  box-shadow: 0 0 4px -1px #39393F;
+  margin-bottom: 10px;
+}
+
+.buttonDiv button:hover{
+  background-color: #282828;
+  box-shadow: 0 0 10px -2px #39393F;
+  transition: 0.5s;
+}
+
+.homepage-news-link:hover{
+  color: #2A2A2D;
+}
+
+.non-decorated-link:hover{
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.1s;
+}
+
+.non-decorated-link{
+  color: #2A2A2D;
+}
+
+.home-photo{
+  box-shadow: 0 0 4px -1px #39393F;
+  object-fit: cover;
+  max-height: 710px;
+}
+
+
+/* Post Section styles */
+
+.posts{
+background-color: #000;
+padding: 40px;
+}
+
+/* Navigation styles */
+
+.navigation-bar{
+  width: 100%;
+  background-color: #F9F8F8;
+}
+
+#navbox{
+  display: none;
+  margin: 0 !important;
+}
+
+.menu-logo{
+  font-size: 30px;
+  left: 0px;
+  display: flex;
+  top: 0px;
+  padding: 10px;
+  width: 80%;
+  text-decoration: none;
+  color: #282828;
+  font-weight: 400;
+}
+
+.parish-logo-img{
+  height: 56px;
+  width: 56px;
+}
+
+.menu-logo p{
+  padding: 6px 0 0 6px;
+  margin: 0;
+}
+
+.menu-logo:hover{
+  text-decoration: none;
+  color: #282828;
+}
+
+.menu{
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 69px;
+  padding: 0;
+}
+
+.listelem{
+  list-style: none;
+  text-align: center;
+  display: none;
+  width: 100%;
+  font-size: 18px;
+  padding-top: 6px;
+}
+
+
+.clickyelem{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+}
+
+.burger-button-part{
+  width: 34px;
+  height: 4px;
+  border-radius: 1px;
+  background-color: #282828;
+  left: 8px;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+#firstline{
+  position: absolute;
+  top: 12px;
+}
+
+#navbox:checked~ * #firstline{
+  transform: rotate(45deg);
+  position: absolute;
+  top: 24px;
+  transition: 0.5s;
+}
+
+#secondline{
+  position: absolute;
+  top: 24px;
+}
+
+#navbox:checked~ * #secondline{
+  width: 0;
+  background-color: #F9F8F8;
+  transition: 0.5s;
+}
+
+#thirdline{
+  position: absolute;
+  top: 36px;
+}
+
+#navbox:checked~ * #thirdline{
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 24px;
+  transition: 0.5s;
+}
+
+.menu-link{
+  width: 100%;
+  padding: 21px 10px 21px 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu-link p{
+  color: black;
+  font-size: large;
+  text-align: center;
+}
+
+.menu-link:hover{
+  text-decoration: none;
+  color: #282828;
+}
+
+#navbox:checked~ul.menu li{
+  display: flex;
+}
+
+.navlabel{
+  margin: 0;
+}
+
+.navigation-bar-underline{
+  margin: 6px 0 0 0;  
+  height: 6px !important;
+  background: linear-gradient(#282828, #d1d1d1, #F9F8F8);
+} 
+
+
+
+@media (min-width: 992px) { 
+  .listelem{
+      width: 20%;
+      display: flex;
+  }
+
+  .clickyelem{
+      display: none;
+  }
+
+  .menu{
+      width: 63%;
+      flex-direction: row;
+      position: absolute;
+      top: 0;
+      left: 37%;
+  }
+  
+  .menu-logo{
+    width: 37%;
+  }
+}
+
+
+@media (max-width:480px){
+  .header-long{
+    display: none;
+  }
+
+  .header-short{
+    font-size: 27px;
+  }
+
+  .menu-logo p {
+    padding: 7.5px 0 0 5px;
+    margin: 0;
+}
+}
+
+@media (min-width:480px){
+  .header-short{
+    display: none;
+  }
+}
+
+/* News styles */
+
+.all-news-box{
+  background-color:  #F9F8F8;
+  padding: 16px 0 48px 0;
+}
+
+.widget-box{
+  border: 1px #2A2A2D;
+  background-color: white;
+  padding: 0 !important ;
+  margin: 20px;
+}
+
+.widget-inner-container{
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 4px -1px #39393F;
+  color: #2A2A2D;
+}
+
+.widget-inner-container:hover{
+  color: black;
+  box-shadow: 0 0 10px -2px #39393F;
+  transition: 0.2s;
+}
+
+.inner-container-on-black{
+  box-shadow: 0 0 4px -1px white;
+}
+
+.inner-container-on-black:hover{
+  box-shadow: 0 0 16px -3px white;
+  transition: 0.2s;
+}
+
+.widget-inner-container h2{
+  padding: 10px;
+  text-align: center;
+}
+
+.widget-inner-container p{
+  padding: 10px;
+  font-size: small;
+}
+
+.widget-inner-container img{
+  width: 100%;
+  height: 256px;
+  object-fit: cover;
+}
+
+
+/* Single info */
+.latest-news-box{
+  background-color: black;
+  padding-top: 40px;
+}
+
+.content-container{
+  background-color: #F9F8F8;
+  padding: 16px 0 48px 0;
+}
+
+.news-box{
+  width: 80%;
+  max-width: 1152px;
+  margin-left: max(10%, calc(50% - 576px));
+  background-color: white;
+  box-shadow: 0 0 4px -1px #39393F;
+  color: #2A2A2D;
+}
+
+.main-photo{
+  width: 100%;
+  height: 512px;
+  object-fit: cover;
+}
+
+.content-field{
+  white-space: pre-wrap;
+}
+
+.news-box h2{
+  padding: 20px 10px;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.info-text{
+  padding: 10px 40px 30px 40px;
+  font-size: 18px;
+  width: 100%;
+}
+
+@media (max-width: 992px) { 
+  .main-photo{
+    height: 384px;
+  }
+}
+
+@media (max-width: 768px) { 
+  .news-box{
+    width: 100%;
+    margin: 0px;
+  }
+}
+
+@media (max-width: 576px) { 
+  .main-photo{
+    height: 256px;
+  }
+}
+
+/* Contact page */
+.contact-content{
+  margin-top: 40px;
+}
+
+.single-contact-field
+{
+  padding: 40px;
+  text-align: center;
+}
+
+.single-contact-field img
+{
+	width: 10%;
+  margin-bottom: 2%;
+}
+
+.contact-heading h1{
+  text-align: center;
+  font-size: 36px;
+	font-weight: 400;
+	padding: 20px;
+}
+
+.contact-fields{
+  padding: 20px 10px;
+  font-size: 17px;
+  width: 100%;
+}
+
+.contact-fields hr{
+  display: none;
+}
+
+
+#center-contact-field{
+  border-left: 2px solid black; 
+  border-right: 2px solid black;
+}
+
+@media (max-width: 1600px) { 
+  .single-contact-field img
+  {
+    width: 14%;
+  }
+}
+
+
+@media (max-width: 1200px) { 
+  #center-contact-field{
+    border-left: 2px solid black; 
+    border-right: none;
+  }
+}
+
+@media (max-width: 992px) { 
+  #center-contact-field{
+    border-left: none ; 
+    border-right: none;
+  }
+
+  .single-contact-field img
+  {
+    width: 10%;
+  }
+
+  .contact-fields hr{
+    display: block;
+    height: 2px !important;
+    color: black;
+    width: 310px;
+    opacity: 100%;
+    margin: 10px 0;
+  }
+  
+}
+
+.icons-source{
+  color: #282828;
+  text-align: right;
+  padding-right: 6px;
+}
+
+
+/* Church subpages */
+.video-container{
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+.info-text hr{
+  width: 70%;
+  margin-top: 15px;
+}
+
+.priests-tab{
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+
+.priests-tab td{
+  width: 50%;
+  padding: 5px 10px;
+}
+
+.priest-col{
+  text-align: right;
+}
+
+
+@media (max-width: 992px) { 
+  .video-container{
+    width: 100%;
+    margin-left: 0;
+  }
+  
+}
+
+.content-photo{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side-photo{
+  margin-bottom: 6px;
+}
+
+.smaller-side-photo-left,
+.smaller-side-photo-right{
+  width: calc(50% - 3px);
+  margin-bottom: 6px;
+}
+
+.smaller-side-photo-left{
+  margin-right: 3px;
+}
+
+.smaller-side-photo-right{
+  margin-left: 3px;
+}
+
+
+/* Parisch office */
+.office-info{
+  text-align: center;
+  font-size: 18px;
+}
+
+.office-info h3{
+  font-size: 24px;
+}
+
+
+.parish-service-widget h2{
+  font-size: 20px;
+  margin: 0px;
+}
+
+.office-heading h1{
+  text-align: center;
+  font-size: 36px;
+	font-weight: 400;
+	padding: 20px;
+}
+
+.info-text h3{
+  font-size: 24px;
+  margin: 24px 10px 12px 10px;
+  margin-left: 10px;
+
+}
+
+.info-text h4{
+  font-size: 22px;
+  margin: 20px 10px 10px 10px;
+  font-weight: 400;
+}
+
+/* footer style */
+#footer{
+  padding: 20px;
+  background-color: #000;
+  color: #EEEEEE;
+  text-align: center;
+}
+
+#footer a{
+  text-decoration: none;
+  font-size: 14px;
+  color: #EEEEEE;
+}
+
+#footer h3{
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #EEEEEE;
+}
+
+.footer-links{
+  padding: 20px 0;
+}
+
+.law-information{
+  color: #EEEEEE;
+  text-align: center;
+  font-size: 12px;
+  padding: 0 6% 10px 6%;
+}
+
+/* management style */
+.management-bar{
+  margin-bottom: 20px;
+}
+
+.management-bar h1{
+  font-size: 28px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.management-button{
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  background-color: white;
+  margin: 10px;
+  box-shadow: 0 0 4px -1px #39393F;
+}
+
+.management-button:hover{
+  box-shadow: 0 0 10px -2px #39393F;
+  background-color: #39393F;
+  color: white;
+}
+
+.management-link{
+  font-size: 16px;
+  text-align: center;
+  margin: 2px 0;
+  width: 100%;
+  display: block;
+  padding: 6px 0 6px 0;
+  text-decoration: none;
+}
+
+.management-link:hover{
+  color: #EEEEEE;
+  background-color: #39393F;
+}
+
+.management-bar form{
+  text-align: center;
+}
+
+.management-bar input{
+  font-size: 16px;
+  padding: 6px 12px;
+  margin: 10px 0;
+}
+
+.management-bar p{
+  font-size: 16px;
+  text-align: left;
+  margin-left: 16%;
+}
+
+#new-post-title,
+#new-post-photo{
+  width: 70%;
+  text-align: center;
+}
+
+#new-post-title{
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#new-post-content{
+  font-size: 16px;
+  width: 80%;
+  padding: 6px 12px;
+  margin: 10px 0;
+}
+
+
+
+/* Gallery in news */
+.gallery-photo-box{
+  width: 80%;
+  margin: 0 10% 0 10%;
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.gallery-photo{
+  width: 100%;
+  max-width: 1000px;
+}
+
+.gallery-photo-desc{
+  font-size: 16px;
+  text-align: center;
+  padding: 2px 5% 0 5%;
+}
+
+/* Gallery management */
+.photo-add-form{
+  font-size: 16px;
+}
+
+.photo-add-form p{
+  margin: 16px 0 6px 16%;
+}
+
+.photo-input{
+  width: 70%;
+  margin-left: 15%;
+  padding: 6px;
+}
+
+#photo-add-button{
+  padding: 5px;
+  width: 100px;
+  margin-left: calc(50% - 50px);
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+/* error template */
+.error-container{
+  width: 100%;
+  padding: 256px 30px;
+  text-align: center;
+}
+
+.error-container img{
+  width: 100px;
+}
+
+.error-container h1{
+  margin-bottom: 16px;
+}
+
+.error-container a{
+  text-decoration: underline;
+  color: #2A2A2D;
+  transition: 0.5s;
+}
+
+.error-container a:hover{
+  color: #2A2A2D;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.error-sign{
+  font-size: 64px;
+}
+
+.facebook-embeded{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 36px;
+}
+
+.fb-page{
+  box-shadow: 0 0 4px -1px #39393F;
+}

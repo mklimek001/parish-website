@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>O Parafii</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="all-news-box">
+
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('history')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/church-photos/title-photos/historia-parafii-lite.jpg') }}" alt="NewsImage">
+                                <h2>Historia Parafii</h2>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('architecture')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/church-photos/title-photos/architektura-lite.jpg') }}" alt="NewsImage">
+                                <h2>Architektura</h2>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('monuments')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/church-photos/title-photos/zabytki-lite.jpg') }}" alt="NewsImage">
+                                <h2>Zabytki</h2>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('priests')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/church-photos/title-photos/proboszczowie-lite.jpg') }}" alt="NewsImage">
+                                <h2>Proboszczowie</h2>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('saints')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/church-photos/title-photos/zywoty-swietych-lite.jpg') }}" alt="NewsImage">
+                                <h2>Żywoty Świętych</h2>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('xmas')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <img src="{{ url_for('static', filename='img/church-photos/title-photos/szopka.jpg') }}" alt="NewsImage">
+                                <h2>Ruchoma Szopka</h2>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!--
+                        
+                    <div class="col-md-5 col-sm-12 widget-box">
+                        <a href="{{url_for('chapels')}}" class="non-decorated-link">
+                            <div class="widget-inner-container">
+                                <h2>Kapliczki przydrożne</h2>
+                                <img src="{{ url_for('static', filename='img/church-photos/title-photos/kapliczki-lite.jpg') }}" alt="NewsImage">
+                            </div>
+                        </a>
+                    </div>
+
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

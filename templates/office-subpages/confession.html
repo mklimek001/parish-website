@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Spowiedź święta</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <div id="photo-field">
+                    <img class="main-photo" src="{{ url_for('static', filename='img/office-photos/confession.jpg') }}" alt="ServiceImage"></img>
+                </div>
+                <h2 class="info-title" id="title-field">Spowiedź święta</h2>
+                <div class="info-text" >
+                    <p id="content-field">
+                        Spotkanie z Chrystusem w sakramencie pokuty jest spotkaniem człowieka z lekarzem dusz. Człowiek staje w pokorze przed Bogiem, a Pan uzdrawia skruszonego grzesznika. 
+                        <br><br> Z sakramentu pokuty można skorzystać w naszej parafii codziennie 20 minut przed poranną i 30 minut przed wieczorną Mszą świętą.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
+        
+    
+    
+
