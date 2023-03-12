@@ -7,7 +7,7 @@ Main functions:
 * Responsiveness thanks to Bootstrap library
 * SQLite database for users and posts - SQLAlchemy helps to provide data
 * Posts management panel with delete/unpublish option
-* Up to three lastes posts on home page
+* Up to three latest posts on home page
 * Posts creator and editor
 * Authorization with Bcrypt encoding
 * Easy uploading photos from local drive to server
