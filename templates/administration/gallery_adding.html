@@ -16,6 +16,10 @@
                     <p class="content-field">{{post.content}}</p>
                 </div>
 
+                <div class="row justify-content-center management-bar">
+                    <a class="col-md-4 col-sm-10 non-decorated-link management-button" href="{{url_for('photos')}}" target="_blank">Zdjęcia</a>
+                </div> 
+
                 <form class="photo-add-form" action="/dodawanie-zdjec/{{post.id}}" method="POST">
                     <p>Link do zdjęcia:</p>
                     <input type="text" name="new-photo-link" id="new-photo-link" class="photo-input" maxlength="200" required> <br>

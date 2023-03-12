@@ -1,3 +1,4 @@
+import os
 from flask import Flask, redirect, render_template, url_for, request, abort
 from datetime import datetime, timedelta
 from flask_sqlalchemy import SQLAlchemy
@@ -15,7 +16,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 app.config['SECRET_KEY'] = ""
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
-
 
 
 login_manager = LoginManager()
@@ -41,17 +41,17 @@ class User(db.Model, UserMixin):
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
-    main_photo = db.Column(db.String(200), nullable=False)
+    main_photo = db.Column(db.String(1000), nullable=False)
     date = db.Column(db.DateTime, default=datetime.utcnow)
-    content = db.Column(db.String(3000), nullable=False)
+    content = db.Column(db.String(4000), nullable=False)
     is_public = db.Column(db.Integer, default=0)
 
 
 class GalleryPhoto(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     post_id = db.Column(db.Integer, ForeignKey(Post.id))
-    photo_addres = db.Column(db.String(200), nullable=False)
-    description = db.Column(db.String(200), nullable=True)
+    photo_addres = db.Column(db.String(1000), nullable=False)
+    description = db.Column(db.String(1000), nullable=True)
 
 
 # registration and login forms
@@ -236,6 +236,29 @@ def delete_photo(id):
         return render_template("administration/gallery_adding.html", post = current_post, photos = photos)
     except:
         return 'An error has occured!'
+  
+
+@app.route("/photos")
+@login_required
+def photos():
+    photos_directory = './static/img/news-photos'
+    photos = os.listdir(photos_directory)
+    photos = [os.path.join(photos_directory, photo) for photo in photos]
+    photos.sort(key=lambda photo: os.path.getmtime(photo))
+    photos = [os.path.basename(photo) for photo in photos]
+    photos = ['img/news-photos/' + photo for photo in photos]
+    photos.reverse()
+    return render_template("administration/photos.html", photos = photos)
+
+
+@app.route("/photos", methods=['POST'])
+@login_required
+def add_photos():
+    added_photo = request.files.get('file')
+    if added_photo != '':
+        added_photo.save("./static/img/news-photos/" + added_photo.filename)
+    return redirect(url_for('photos'))
+  
 
 
 # main pages for average users
@@ -305,7 +328,6 @@ def saints():
 def xmas():
     return render_template("church-subpages/xmas.html")
 
-
 @app.route("/o-parafii/kapliczki-przydrozne")
 def chapels():
     return render_template("church-subpages/chapels.html")
@@ -343,17 +365,13 @@ def baptism():
 def marriage():
     return render_template("office-subpages/marriage.html")
 
-
 @app.route("/kancelaria/bierzmowanie")
 def confirmation():
     return render_template("office-subpages/confirmation.html")
 
-
 @app.route("/kancelaria/pierwsza-komunia")
 def communion():
     return render_template("office-subpages/communion.html")
-
-
 
 @app.route("/kancelaria/spowiedz")
 def confession():

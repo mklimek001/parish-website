@@ -111,6 +111,7 @@ img{
 
 .non-decorated-link{
   color: #2A2A2D;
+  text-decoration: none;
 }
 
 .home-photo{
@@ -445,15 +446,15 @@ padding: 40px;
 
 .single-contact-field img
 {
-	width: 10%;
+  width: 10%;
   margin-bottom: 2%;
 }
 
 .contact-heading h1{
   text-align: center;
   font-size: 36px;
-	font-weight: 400;
-	padding: 20px;
+  font-weight: 400;
+  padding: 20px;
 }
 
 .contact-fields{
@@ -597,8 +598,8 @@ padding: 40px;
 .office-heading h1{
   text-align: center;
   font-size: 36px;
-	font-weight: 400;
-	padding: 20px;
+  font-weight: 400;
+  padding: 20px;
 }
 
 .info-text h3{
@@ -720,6 +721,9 @@ padding: 40px;
   margin: 10px 0;
 }
 
+.photo-uploader{
+  margin-left: calc(50% - 132px) !important;
+}
 
 
 /* Gallery in news */

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Baza zdjęć</title>
+{% endblock %}
+
+{% block body %}    
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+
+                <div class="management-bar">
+                    <h2 class="info-title" id="title-field"> Dodawanie zdjęć </h2>
+                    <form method="POST" enctype="multipart/form-data">
+                        <div>
+                            <input class="photo-uploader" type="file" name="file" id="file" accept=".jpg, .JPG, .JPEG, .png, .PNG" required>
+                        </div>
+                        <div>
+                            <input type="submit">
+                        </div>
+                    </form>
+                </div>
+
+                <h2 class="info-title" id="title-field"> Baza zdjęć dodanych na stronie </h2>
+                <div class="info-text" >
+                    <p class="content-field">Link do zdjęcia, który można wkleić do galerii, otrzymujemy klikając na dowolne zdjęcie prawym przyciskiem myszy, a następnie wybierając opcję "Kopiuj adres obrazu", "Kopiuj link obrazu" lub inne podobne (dokładne brzmienie zależne od używanej przeglądarki).</p>
+                </div>
+                
+                <div class="row justify-content-center" id="posts-row">
+                    {% for photo_addr in photos %}
+                    <div class = "col-xl-3 col-md-5 col-sm-12 widget-box">
+                        <img class="gallery-photo" src="{{ url_for('static', filename=photo_addr)}}" alt="NewsImage"></img>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+            </div>
+        </div>
+
+    {% endblock %}
+    
+</body>
+</html>
+
+

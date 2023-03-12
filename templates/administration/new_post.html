@@ -13,11 +13,15 @@
                     <p>Tytuł:</p>
                     <input type="text" name="title" id="new-post-title" maxlength="100" required> <br>
                     <p>Zdjęcie główne:</p>
-                    <input type="text" name="photo" id="new-post-photo" maxlength="200" required> <br>
+                    <a class="non-decorated-link management-button" href="{{url_for('photos')}}" target="_blank">Zdjęcia</a> 
+                    <input type="text" name="photo" id="new-post-photo" maxlength="200" required>
+                    <br>          
                     <p>Treść:</p>
                     <textarea name="content" id="new-post-content" rows="16" maxlength="3000" required ></textarea> <br>
                     <input type="submit" value="Zapisz">
                 </form>
+
+                
             </div>
         </div>
     </div>     
