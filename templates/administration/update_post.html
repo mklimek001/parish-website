@@ -16,11 +16,15 @@
                     <a class="non-decorated-link management-button" href="{{url_for('photos')}}" target="_blank">Zdjęcia</a>
                     <input type="text" name="photo" id="new-post-photo" maxlength="200"  value="{{post.main_photo}}" required> <br>
                     <p>Treść:</p>
-                    <textarea name="content" id="new-post-content" rows="16" maxlength="3000" required > {{post.content}}</textarea> <br>
-                    <input type="submit" value="Zapisz">
+                    <textarea name="content" id="new-post-content" rows="16" maxlength="3600" required>{{post.content}}</textarea> <br>
+                    <input type="submit" value="Zapisz" class="management-button submit-post-button">
+                    <button type="button" id="preview-button" class="management-button">Podgląd</button>
                 </form>
             </div>
         </div>
-    </div>     
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+    <script src="{{ url_for('static', filename='javascript/preview.js') }}"></script>
 
 {% endblock %}

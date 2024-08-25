@@ -8,6 +8,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
+import markdown
 
 # configs
 
@@ -258,7 +259,6 @@ def add_photos():
     if added_photo != '':
         added_photo.save("./static/img/news-photos/" + added_photo.filename)
     return redirect(url_for('photos'))
-  
 
 
 # main pages for average users
@@ -299,6 +299,8 @@ def single_news(id):
     filter_month = datetime.today() - timedelta(days = MAX_POST_AGE_IN_DAYS)
     three_posts = Post.query.filter(Post.is_public >= '1').filter(Post.id != id).filter(Post.date >= filter_month).order_by(desc(Post.date)).limit(3).all()
     photos = GalleryPhoto.query.filter(GalleryPhoto.post_id == id).all()
+    post.content_html = markdown.markdown(post.content, extensions=['tables', 'fenced_code'])
+    #TODO if database will be built once again it can be added to Post model and moved to new post creation
     return render_template("single_news.html", post = post, posts = three_posts, photos = photos)
 
 

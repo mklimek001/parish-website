@@ -402,9 +402,9 @@ padding: 40px;
   white-space: pre-wrap;
 }
 
-.news-box h2{
-  padding: 20px 10px;
+.info-title{
   text-align: center;
+  padding: 20px 10px;
   font-size: xx-large;
 }
 
@@ -602,6 +602,16 @@ padding: 40px;
   padding: 20px;
 }
 
+.info-text h1{
+  margin: 24px 10px 16px;
+  font-size: 32px;
+}
+
+.info-text h2{
+  margin: 24px 10px 14px;
+  font-size: 28px;
+}
+
 .info-text h3{
   font-size: 24px;
   margin: 24px 10px 12px 10px;
@@ -641,6 +651,7 @@ padding: 40px;
 
 .law-information{
   color: #EEEEEE;
+  background-color: #000;
   text-align: center;
   font-size: 12px;
   padding: 0 6% 10px 6%;
@@ -658,11 +669,13 @@ padding: 40px;
 }
 
 .management-button{
+  min-width: 144px;
   padding: 10px;
   text-align: center;
   font-size: 20px;
   background-color: white;
   margin: 10px;
+  border: none;
   box-shadow: 0 0 4px -1px #39393F;
 }
 
@@ -670,6 +683,7 @@ padding: 40px;
   box-shadow: 0 0 10px -2px #39393F;
   background-color: #39393F;
   color: white;
+  font-weight: bolder;
 }
 
 .management-link{
@@ -725,6 +739,10 @@ padding: 40px;
   margin-left: calc(50% - 132px) !important;
 }
 
+.submit-post-button{
+  font-size: 20px !important;
+  padding: 10px !important;
+}
 
 /* Gallery in news */
 .gallery-photo-box{
