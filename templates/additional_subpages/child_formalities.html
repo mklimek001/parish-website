@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Standardy ochrony dzieci</title>
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="content-container">
+            <div class="news-box">
+                <h2 class="info-title" id="title-field">Standardy ochrony dzieci w duszpasterstwie parafialnym</h2>
+                <iframe src="{{ url_for('static', filename='pdfs/STANDARDY_OCHRONY_DZIECI_W_DUSZPASTERSTWIE_PARAFIALNYM_2024.pdf')}}" class="pdf-embeded">
+                    Używana przeglądarka nie obsługuje osadzania plików PDF.
+                </iframe>
+                <div class="info-text" >
+                    <a href="{{ url_for('static', filename='pdfs/STANDARDY_OCHRONY_DZIECI_W_DUSZPASTERSTWIE_PARAFIALNYM_2024.pdf')}}" download>
+                        <button class="pdf-download-button management-button">
+                            Pobierz dokument
+                        </button> 
+                    </a>       
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+

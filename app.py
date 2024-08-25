@@ -385,11 +385,13 @@ def illness():
 def funeral():
     return render_template("office-subpages/funeral.html")
 
+@app.route("/dzieci_w_duszpasterstwie")
+def childs():
+    return render_template("/additional_subpages/child_formalities.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error/404.html'), 404
-
 
 if __name__ == "__main__":
     app.run(debug=True)
