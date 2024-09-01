@@ -4,7 +4,7 @@ document.getElementById('preview-button').addEventListener('click', function(eve
     var content = document.getElementById('new-post-content').value;
     var htmlContent = marked(content);
     
-    var previewWindow = window.open("", "Podgląd", "width=800,height=600");
+    var previewWindow = window.open("", "Podgląd", "width=992, height=600");
     previewWindow.document.open();
     previewWindow.document.write(`
         <html>

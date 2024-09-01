@@ -668,7 +668,7 @@ padding: 40px;
   margin: 20px 0;
 }
 
-.management-button{
+.management-button, .management-bar input#submit{
   min-width: 144px;
   padding: 10px;
   text-align: center;
@@ -679,11 +679,32 @@ padding: 40px;
   box-shadow: 0 0 4px -1px #39393F;
 }
 
-.management-button:hover{
+.management-button:hover, .management-bar input#submit:hover{
   box-shadow: 0 0 10px -2px #39393F;
   background-color: #39393F;
   color: white;
   font-weight: bolder;
+}
+
+.view-password-btn{
+  width: 40px;
+  padding: 8px;
+  text-align: center;
+  font-size: 16px;
+  background-color: white;
+  margin: 10px 0;
+  border: none;
+  box-shadow: 0 0 4px -1px #39393F;
+}
+
+input#password{
+  width: 167px;
+}
+
+.view-password-btn:hover{
+  box-shadow: 0 0 10px -2px #39393F;
+  background-color: #39393F;
+  color: white;
 }
 
 .management-link{
@@ -779,9 +800,8 @@ padding: 40px;
 }
 
 #photo-add-button{
-  padding: 5px;
-  width: 100px;
-  margin-left: calc(50% - 50px);
+  width: 144px;
+  margin-left: calc(50% - 72px);
   margin-top: 16px;
   margin-bottom: 24px;
 }

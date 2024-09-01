@@ -25,9 +25,12 @@
                                 <a href="/publication-post/{{post.id}}"  class="non-decorated-link management-link">{% if post.is_public > 0 %} Cofnij publikację {% else %} Opublikuj {% endif %}</a>
                                 <a href="/dodawanie-zdjec/{{post.id}}"  class="non-decorated-link management-link">Zarządzaj galerią</a>
                                 <a href="/update-post/{{post.id}}"  class="non-decorated-link management-link">Edytuj</a>
-                                <a href="/delete-post/{{post.id}}"  class="non-decorated-link management-link">Usuń post</a>
+                                <a href="/delete-post/{{post.id}}" 
+                                    class="non-decorated-link management-link" 
+                                    onclick="return confirm('Czy na pewno checsz usunąć post\n{{post.title}}');">
+                                    Usuń post
+                                </a>
                             </div>
-
                         </div>
                     {% endfor %}
                 </div>

@@ -14,7 +14,7 @@ import markdown
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
-app.config['SECRET_KEY'] = ""
+app.config['SECRET_KEY'] = "1234"
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 
@@ -168,6 +168,7 @@ def gallery_adding(news_id):
     else:
         photos = GalleryPhoto.query.filter(GalleryPhoto.post_id == news_id).all()
         current_post = Post.query.filter_by(id = news_id).first()
+        current_post.content_html = markdown.markdown(current_post.content, extensions=['tables', 'fenced_code'])
         return render_template("administration/gallery_adding.html", post = current_post, photos = photos)
 
 

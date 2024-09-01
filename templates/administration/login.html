@@ -12,11 +12,17 @@
                 <form method="POST" action="">
                     {{ form.hidden_tag() }} <br>
                     {{ form.username }} <br>
-                    {{ form.password }} <br>
+                    <div class="password-wrapper">
+                        {{ form.password }}
+                        <button type="button" class="view-password-btn">👁️</button>
+                    </div>
+            
                     {{ form.submit }} <br>
                 </form>
             </div>
         </div>
-    </div>     
+    </div>
+    
+    <script src="{{ url_for('static', filename='javascript/toggle_button.js') }}"></script>
 
 {% endblock %}

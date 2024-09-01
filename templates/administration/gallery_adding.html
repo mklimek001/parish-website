@@ -13,7 +13,7 @@
                 </div>
                 <h2 class="info-title" id="title-field"> {{post.title}} - dodawanie zdjęć </h2>
                 <div class="info-text" >
-                    <p class="content-field">{{post.content}}</p>
+                    <p class="content-field">{{ post.content_html|safe }}</p>
                 </div>
 
                 <div class="row justify-content-center management-bar">
