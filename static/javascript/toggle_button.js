@@ -12,9 +12,9 @@ function togglePassword() {
     
     if (passwordField.type === "password") {
         passwordField.type = "text";
-        passwordButton.textContent = "🔒"; 
+        passwordButton.innerHTML = "<i class='lar la-eye-slash'></i>"; 
     } else {
         passwordField.type = "password";
-        passwordButton.textContent = "👁️";
+        passwordButton.innerHTML = "<i class='las la-eye'></i>";
     }
 }

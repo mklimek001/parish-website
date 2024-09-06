@@ -677,6 +677,7 @@ padding: 40px;
   margin: 10px;
   border: none;
   box-shadow: 0 0 4px -1px #39393F;
+  border-radius: 1px;
 }
 
 .management-button:hover, .management-bar input#submit:hover{
@@ -687,24 +688,23 @@ padding: 40px;
 }
 
 .view-password-btn{
-  width: 40px;
-  padding: 8px;
+  padding: 8px 4px;
   text-align: center;
   font-size: 16px;
-  background-color: white;
+  background-color: #F9F8F8;
   margin: 10px 0;
   border: none;
-  box-shadow: 0 0 4px -1px #39393F;
 }
 
 input#password{
-  width: 167px;
+  width: 179px;
 }
 
 .view-password-btn:hover{
   box-shadow: 0 0 10px -2px #39393F;
   background-color: #39393F;
   color: white;
+  border-radius: 1px;
 }
 
 .management-link{
