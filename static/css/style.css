@@ -855,7 +855,7 @@ input#password{
 
 @media (max-width: 768px) {
   .pdf-embeded{
-    height: 45vh;
+    display: none;
   }
 }
 
