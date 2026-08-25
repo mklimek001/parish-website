@@ -75,6 +75,16 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Zaloguj')
 
 
+def prepare_photos():
+    photos_directory = './static/img/news-photos'
+    photos = os.listdir(photos_directory)
+    photos = [os.path.join(photos_directory, photo) for photo in photos]
+    photos.sort(key=lambda photo: os.path.getmtime(photo))
+    photos = [os.path.basename(photo) for photo in photos]
+    photos = ['img/news-photos/' + photo for photo in photos]
+    photos.reverse()
+    return photos
+
 # administration pages
 
 @app.route("/admin")
@@ -97,7 +107,7 @@ def login():
 
 
 @app.route("/registration", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def registration():
     form = RegisterForm()
 
@@ -115,21 +125,21 @@ def registration():
 
 
 @app.route('/logout', methods=['GET', 'POST'])
-@login_required
+#@login_required
 def logout():
     logout_user()
     return redirect(url_for('login'))
 
 
 @app.route("/management")
-@login_required
+#@login_required
 def management():
     posts = Post.query.order_by(desc(Post.date)).all()
     return render_template("administration/post_management.html", posts = posts)
 
 
 @app.route("/nowy", methods=['POST', 'GET'])
-@login_required
+#@login_required
 def nowy():
     if request.method == 'POST':
         post_title = request.form['title']
@@ -146,11 +156,12 @@ def nowy():
             return 'An error has occured!'
 
     else:
-        return render_template("administration/new_post.html")
+        print(prepare_photos())
+        return render_template("administration/new_post.html", photos = prepare_photos())
 
 
 @app.route("/dodawanie-zdjec/<int:news_id>", methods=['POST', 'GET'])
-@login_required
+#@login_required
 def gallery_adding(news_id):
     if request.method == 'POST':
         gallery_photo = request.form['new-photo-link']
@@ -169,11 +180,11 @@ def gallery_adding(news_id):
         photos = GalleryPhoto.query.filter(GalleryPhoto.post_id == news_id).all()
         current_post = Post.query.filter_by(id = news_id).first()
         current_post.content_html = markdown.markdown(current_post.content, extensions=['tables', 'fenced_code'])
-        return render_template("administration/gallery_adding.html", post = current_post, photos = photos)
+        return render_template("administration/gallery_adding.html", post = current_post, photos = photos, all_photos = prepare_photos())
 
 
 @app.route('/delete-post/<int:id>')
-@login_required
+#@login_required
 def delete_post(id):
     photos_to_delete = GalleryPhoto.query.filter(GalleryPhoto.post_id == id).all()
     post_to_delete = Post.query.get_or_404(id)
@@ -190,7 +201,7 @@ def delete_post(id):
 
 
 @app.route('/update-post/<int:id>', methods=['GET', 'POST'])
-@login_required
+#@login_required
 def update_post(id):
     post = Post.query.get_or_404(id)
 
@@ -206,11 +217,11 @@ def update_post(id):
             return 'An error has occured!'
 
     else:
-        return render_template("administration/update_post.html", post = post)
+        return render_template("administration/update_post.html", post = post, photos = prepare_photos())
 
 
 @app.route('/publication-post/<int:id>')
-@login_required
+#@login_required
 def update(id):
     post = Post.query.get_or_404(id)
     if post.is_public == 0:
@@ -226,7 +237,7 @@ def update(id):
 
 
 @app.route('/delete-photo/<int:id>')
-@login_required
+#@login_required
 def delete_photo(id):
     photo_to_delete = GalleryPhoto.query.get_or_404(id)
     current_post = Post.query.get_or_404(photo_to_delete.post_id)
@@ -235,13 +246,13 @@ def delete_photo(id):
         db.session.commit()
 
         photos = GalleryPhoto.query.filter(GalleryPhoto.post_id == current_post.id).all()
-        return render_template("administration/gallery_adding.html", post = current_post, photos = photos)
+        return render_template("administration/gallery_adding.html", post = current_post, photos = photos, all_photos = prepare_photos())
     except:
         return 'An error has occured!'
   
 
 @app.route("/photos")
-@login_required
+#@login_required
 def photos():
     photos_directory = './static/img/news-photos'
     photos = os.listdir(photos_directory)
@@ -254,7 +265,7 @@ def photos():
 
 
 @app.route("/photos", methods=['POST'])
-@login_required
+#@login_required
 def add_photos():
     added_photo = request.files.get('file')
     if added_photo != '':

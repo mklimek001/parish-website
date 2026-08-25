@@ -9,43 +9,142 @@
         <div class="content-container">
             <div class="news-box">
                 <div id="photo-field">
-                    <img class="main-photo" src="{{post.main_photo}}" alt="NewsImage"></img>
+                    <img class="main-photo" src="{{post.main_photo}}" alt="NewsImage">
                 </div>
-                <h2 class="info-title" id="title-field"> {{post.title}} - dodawanie zdjęć </h2>
-                <div class="info-text" >
+
+                <h2 class="info-title" id="title-field">
+                    {{post.title}} - dodawanie zdjęć
+                </h2>
+
+                <div class="info-text">
                     <p class="content-field">{{ post.content_html|safe }}</p>
                 </div>
 
-                <div class="row justify-content-center management-bar">
-                    <a class="col-md-4 col-sm-10 non-decorated-link management-button" href="{{url_for('photos')}}" target="_blank">Zdjęcia</a>
-                </div> 
+                <form class="photo-add-form"
+                      action="/dodawanie-zdjec/{{post.id}}"
+                      method="POST">
 
-                <form class="photo-add-form" action="/dodawanie-zdjec/{{post.id}}" method="POST">
-                    <p>Link do zdjęcia:</p>
-                    <input type="text" name="new-photo-link" id="new-photo-link" class="photo-input" maxlength="200" required> <br>
+                    <p>Zdjęcie:</p>
+
+                    <div class="row justify-content-center management-bar">
+
+                    <button type="button" id="quick-new-post-photo" class="col-md-4 management-button" data-bs-toggle="modal" data-bs-target="#photoModal">
+                        Wybierz zdjęcie
+                    </button>
+                    <a class="col-md-4 non-decorated-link management-button" href="{{url_for('photos')}}" target="_blank">
+                        Wszystkie zdjęcia
+                    </a> 
+                    </div>
+
+                    <input type="text" name="new-photo-link" id="new-photo-link" class="photo-input" maxlength="200" required>
+                    
+                    <br> 
+
                     <p>Opis do zdjęcia:</p>
-                    <input type="text" name="new-photo-desc" id="new-photo-desc" class="photo-input" maxlength="200" required> <br>
+                    <input type="text" name="new-photo-desc" id="new-photo-desc" class="photo-input" maxlength="200" required>
+                    <br>
+
                     <input type="submit" id="photo-add-button" class="management-button" value="Dodaj">
                 </form>
-                
+
                 {% for photo in photos %}
-                <div class = "gallery-photo-box">
-                    <img class="gallery-photo" src="{{photo.photo_addres}}" alt="NewsImage"></img>
-                    <a href="/delete-photo/{{photo.id}}"  class="non-decorated-link management-link">Usuń zdjęcie</a>
-                    <div class="gallery-photo-desc">{{photo.description}}</div>
+                <div class="gallery-photo-box">
+                    <img class="gallery-photo"
+                         src="{{photo.photo_addres}}"
+                         alt="NewsImage">
+
+                    <a href="/delete-photo/{{photo.id}}"
+                       class="non-decorated-link management-link">
+                        Usuń zdjęcie
+                    </a>
+
+                    <div class="gallery-photo-desc">
+                        {{photo.description}}
+                    </div>
                 </div>
                 {% endfor %}
-
-                
-
+                <a class="non-decorated-link management-button back-button back-button-gallery" href="{{url_for('management')}}">  Powrót </a>
             </div>
         </div>
-
     </div>
 
-    {% endblock %}
-    
-</body>
-</html>
+
+    <!-- Photo selection modal -->
+    <div class="modal"
+         id="photoModal"
+         tabindex="-1"
+         aria-labelledby="photoModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photoModalLabel">
+                        Wybierz zdjęcie
+                    </h5>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Zamknij">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="row justify-content-center" id="photos-row">
+
+                        {% for photo_addr in all_photos %}
+                        <div class="col-xl-3 col-md-5 col-sm-12 widget-box mb-3">
+
+                            <img class="img-fluid selectable-photo"
+                                 src="{{ url_for('static', filename=photo_addr) }}"
+                                 data-photo="{{ url_for('static', filename=photo_addr) }}"
+                                 alt="NewsImage">
+
+                        </div>
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Photo selection script -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const photoInput = document.getElementById("new-photo-link");
+        const photos = document.querySelectorAll(".selectable-photo");
+
+        photos.forEach(photo => {
+
+            photo.addEventListener("click", () => {
+
+                const addr = photo.getAttribute("data-photo");
+
+                photoInput.value = addr;
+
+                // Close modal
+                const modal = bootstrap.Modal.getInstance(
+                    document.getElementById("photoModal")
+                );
+
+                modal.hide();
+            });
+
+        });
+
+    });
+    </script>
+
+{% endblock %}

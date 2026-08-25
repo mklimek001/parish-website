@@ -44,9 +44,60 @@
         </div>
     </div>
 
+    <div class="lightbox" id="lightbox">
+        <span class="close-gallery">&times;</span>
+        <span class="prev">&#10094;</span>
+        <img id="lightbox-img" src="" alt="">
+        <span class="next">&#10095;</span>
+    </div>
+
+    <script>
+    const photos = document.querySelectorAll(".gallery-photo");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = lightbox.querySelector(".close-gallery");
+    const prevBtn = lightbox.querySelector(".prev");
+    const nextBtn = lightbox.querySelector(".next");
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+        if (index < 0) index = photos.length - 1;
+        if (index >= photos.length) index = 0;
+        currentIndex = index;
+        lightboxImg.src = photos[currentIndex].src;
+        lightbox.style.display = "flex";
+    }
+
+    photos.forEach((photo, index) => {
+        photo.addEventListener("click", () => {
+        showImage(index);
+        });
+    });
+
+    closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+    prevBtn.addEventListener("click", () => {
+        showImage(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener("click", () => {
+        showImage(currentIndex + 1);
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowLeft") showImage(currentIndex - 1);
+        if (e.key === "ArrowRight") showImage(currentIndex + 1);
+        if (e.key === "Escape") lightbox.style.display = "none";
+        }
+    });
+    </script>
+
     {% endblock %}
-    
+
 </body>
 </html>
-
 
