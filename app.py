@@ -1,4 +1,6 @@
 import os
+import re
+import unicodedata
 from flask import Flask, redirect, render_template, url_for, request, abort
 from datetime import datetime, timedelta
 from flask_sqlalchemy import SQLAlchemy
@@ -268,10 +270,14 @@ def photos():
 #@login_required
 def add_photos():
     added_photo = request.files.get('file')
-    if added_photo != '':
-        added_photo.save("./static/img/news-photos/" + added_photo.filename)
+    if added_photo and added_photo.filename:
+        filename = added_photo.filename
+        filename = unicodedata.normalize('NFKD', filename)
+        filename = filename.encode('ascii', 'ignore').decode('ascii')
+        filename = re.sub(r'\s+', '_', filename)
+        filename = re.sub(r'[^A-Za-z0-9._-]', '', filename)
+        added_photo.save("./static/img/news-photos/" + filename)
     return redirect(url_for('photos'))
-
 
 # main pages for average users
 

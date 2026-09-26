@@ -114,10 +114,14 @@ img{
   text-decoration: none;
 }
 
-.home-photo{
+.home-photo, #churchCarousel{
   box-shadow: 0 0 4px -1px #39393F;
   object-fit: cover;
   max-height: 710px;
+}
+
+.glyphicon{
+  padding-top: 350px;
 }
 
 
